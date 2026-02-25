@@ -1,0 +1,95 @@
+\documentclass{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Tahvildar-Zadeh \\ Linear Algebra}{Homework 4}{Aadhithya Saravanan}
+\runningheader{Linear Algebra \\ Homework 4}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 2.1.2}
+\newline
+\newline
+$T$ is a linear transformation if $T(u+v)=T(u)+T(v)$ for all $u, v \in \mathbb{R}^3$ and $T(cu)=cT(u)$ for all $u \in \mathbb{R}^3$ and $c \in \mathbb{R}$. Let $u = (x_1, y_1, z_1)$ and $v = (x_2, y_2, z_2)$. Then, $T(u+v) = T(x_1+x_2, y_1+y_2, z_1+z_2) = (x_1+x_2-y_1-y_2, 2(z_1+z_2))=((x_1-y_1)+(x_2-y_2), 2(z_1)+2(z_2))=(x_1-y_1, 2z_1)+(x_2-y_2, 2z_2)=T(u)+T(v)$. Also, $T(cu) = T(cx_1, cy_1, cz_1) = (cx_1-cy_1, 2cz_1) = c(x_1-y_1, 2z_1) = cT(u)$. Thus, $T$ is a linear transformation. $N(T)$ is the set of vectors $u$ such that $T(u) = 0$. Let $u = (x, y, z)$. Then, $T(u) = (x-y, 2z)$. For $T(u)$ to be equal to $0$, we must have $x-y=0$ and $2z=0$. Thus, $N(T) = \{(x, x, 0) | x \in \mathbb{R}\}$. $N(T)$ is spanned by the vector $(1, 1, 0)$. $R(T)$ is the set of vectors that can be written as $T(u)$ for some vector $u$. Let $u = (x, y, z)$. Then, $T(u) = (x-y, 2z)$. Since $x$ and $y$ can vary to adjust the first component and $z$ can vary to adjust the second component, $R(T)$ is $\{(a, b) | a \in \mathbb{R}, b \in \mathbb{R}\}$. $R(T)$ is spanned by the vectors $(1, 0)$ and $(0, 1)$. The nullity of $T$ is the dimension of $N(T)$, which is 1, because there is one vector in its basis. The rank of $T$ is the dimension of $R(T)$, which is 2, because there are two vectors in its basis. The Dimension Theorem states that the nullity of $T$ plus the rank of $T$ must equal the dimension of the domain of $T$. The domain of $T$ is $\mathbb{R}^3$, which has dimension 3. The nullity of $T$ is 1 and the rank of $T$ is 2, so their sum is 3, which equals the dimension of the domain. Thus, the Dimension Theorem holds for this linear transformation. Since the dimension of the null space is greater than 0, Theorem 2.4 says that $T$ is not one-to-one. Therefore, by Theorem 2.5, $T$ is also not onto.
+\newline
+
+\underline{Exercise 2.1.3}
+\newline
+\newline
+$T$ is a linear transformation if $T(u+v)=T(u)+T(v)$ for all $u, v \in \mathbb{R}^2$ and $T(cu)=cT(u)$ for all $u \in \mathbb{R}^2$ and $c \in \mathbb{R}$. Let $u = (x_1, y_1)$ and $v = (x_2, y_2)$. Then, $T(u+v) = T(x_1+x_2, y_1+y_2) = (x_1+x_2+y_1+y_2, 0, 2(x_1+x_2)-(y_1+y_2))=((x_1+y_1)+(x_2+y_2), 0, (2x_1-y_1)+(2x_2-y_2))=(x_1+y_1, 0, 2x_1-y_1)+(x_2+y_2, 0, 2x_2-y_2)=T(u)+T(v)$. Also, $T(cu) = T(cx_1, cy_1) = (cx_1+cy_1, 0, 2cx_1-cy_1) = c(x_1+y_1, 0, 2x_1-y_1) = cT(u)$. Thus, $T$ is a linear transformation. $N(T)$ is the set of vectors $u$ such that $T(u) = 0$. Let $u = (x, y)$. Then, $T(u) = (x+y, 0, 2x-y)$. For $T(u)$ to be equal to $0$, we must have $x+y=0$ and $2x-y=0$. Solving this system of equations gives us $x=0$ and $y=0$. Thus, $N(T) = \{(0, 0)\}$ and is spanned by the empty set. $R(T)$ is the set of vectors that can be written as $T(u)$ for some vector $u$. Let $u = (x, y)$. Then, $T(u) = (a, 0, b)$ where $a = x+y$ and $b = 2x-y$. Solving for $x$ and $y$ in terms of $a$ and $b$ gives us $x = (a+b)/3$ and $y = (2a-b)/3$. Since $a$ and $b$ can vary freely, $R(T)$ is $\{(a, 0, b) | a \in \mathbb{R}, b \in \mathbb{R}\}$. $R(T)$ is spanned by the vectors $(1, 0, 0)$ and $(0, 0, 1)$. The nullity of $T$ is the dimension of $N(T)$, which is 0, because there are no vectors in its basis. The rank of $T$ is the dimension of $R(T)$, which is 2, because there are two vectors in its basis. The Dimension Theorem states that the nullity of $T$ plus the rank of $T$ must equal the dimension of the domain of $T$. The domain of $T$ is $\mathbb{R}^2$, which has dimension 2. The nullity of $T$ is 0 and the rank of $T$ is 2, so their sum is 2, which equals the dimension of the domain. Thus, the Dimension Theorem holds for this linear transformation. Since the dimension of the null space is equal to 0, Theorem 2.4 says that $T$ is one-to-one. $T$ is not onto because the codomain of $T$ is $\mathbb{R}^3$, which has dimension 3, and the rank of $T$ is 2, which is less than the dimension of the codomain. Therefore, $T$ is not onto.
+\newline
+
+\underline{Exercise 2.1.9}
+\newline
+\begin{parts}
+    \part $T$ is not linear because $T(u+v) \neq T(u)+T(v)$ for all $u, v \in \mathbb{R}^2$. Let $u = (x_1, y_1)$ and $v = (x_2, y_2)$. Then, $T(u+v) = T(x_1+x_2, y_1+y_2) = (1, y_1+y_2)$. However, $T(u)+T(v) = (1, y_1)+(1, y_2) = (2, y_1+y_2)$. Thus, $T(u+v) \neq T(u)+T(v)$ and $T$ is not linear.
+    \part $T$ is not linear because $T(u+v) \neq T(u)+T(v)$ for all $u, v \in \mathbb{R}^2$. Let $u = (x_1, y_1)$ and $v = (x_2, y_2)$. Then, $T(u+v) = T(x_1+x_2, y_1+y_2) = (x_1+x_2,(x_1+x_2)^2)$. However, $T(u)+T(v) = (x_1, x_1^2)+(x_2, x_2^2) = (x_1+x_2, x_1^2+x_2^2)$. Since $x_1^2+x_2^2 \neq (x_1+x_2)^2$ for all $x_1, x_2 \in \mathbb{R}$, we have $T(u+v) \neq T(u)+T(v)$ and $T$ is not linear.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.1.15}
+\newline
+\newline
+$T$ is linear if $T(u+v)=T(u)+T(v)$ for all $u, v \in P(\mathbb{R})$ and $T(cu)=cT(u)$ for all $u \in P(\mathbb{R})$ and $c \in \mathbb{R}$. Let $u = a_nx^n + a_{n-1}x^{n-1} + ... + a_1x + a_0$ and $v = b_nx^n + b_{n-1}x^{n-1} + ... + b_1x + b_0$. Then, $T(u+v) = T((a_n+b_n)x^n + (a_{n-1}+b_{n-1})x^{n-1} + ... + (a_1+b_1)x + (a_0+b_0)) = \int_{0}^{x}(a_n+b_n)x^n + (a_{n-1}+b_{n-1})x^{n-1} + ... + (a_1+b_1)x + (a_0+b_0)\,dt=\frac{(a_n+b_n)x^{n+1}}{n+1} + \frac{(a_{n-1}+b_{n-1})x^n}{n} + ... + \frac{(a_1+b_1)x^2}{2} + (a_0+b_0)x=\frac{(a_n)x^{n+1}}{n+1} + \frac{(a_{n-1})x^n}{n} + ... + \frac{(a_1)x^2}{2} + a_0x + \frac{(b_n)x^{n+1}}{n+1} + \frac{(b_{n-1})x^n}{n} + ... + \frac{(b_1)x^2}{2} + b_0x=T(u)+T(v)$. Also, $T(cu) = T(ca_nx^n + ca_{n-1}x^{n-1} + ... + ca_1x + ca_0) = \int_{0}^{x}ca_nx^n + ca_{n-1}x^{n-1} + ... + ca_1x + ca_0\,dt=\frac{(ca_n)x^{n+1}}{n+1} + \frac{(ca_{n-1})x^n}{n} + ... + \frac{(ca_1)x^2}{2} + (ca_0)x=c(\frac{a_nx^{n+1}}{n+1} + \frac{a_{n-1}x^n}{n} + ... + \frac{a_1x^2}{2} + a_0x)=cT(u)$. Thus, $T$ is a linear transformation. $N(T)$ is the set of vectors $u$ such that $T(u) = 0$. Let $u = a_nx^n + a_{n-1}x^{n-1} + ... + a_1x + a_0$. Then, $T(u) = \frac{(a_n)x^{n+1}}{n+1} + \frac{(a_{n-1})x^n}{n} + ... + \frac{(a_1)x^2}{2} + a_0x$. For $T(u)$ to be equal to $0$, we must have $\frac{(a_n)x^{n+1}}{n+1} + \frac{(a_{n-1})x^n}{n} + ... + \frac{(a_1)x^2}{2} + a_0x=0$ for all $x$. This can only be true if all the coefficients are equal to 0. Thus, $N(T) = \{0\}$ and is spanned by the empty set. By Theorem 2.4, since the dimension of the null space is equal to 0, $T$ is one-to-one. To show that $T$ is not onto, we just have to show that there exists a vector $u\in P(\mathbb{R})$ such that there is no vector $v\in P(\mathbb{R})$ such that $T(v) = u$. Let $u = 1$. Then, there is no vector $v\in P(\mathbb{R})$ such that $T(v) = 1$, because the constant term of $T(v)$ is always 0. Thus, $T$ is not onto.
+\newline
+
+\underline{Exercise 2.2.2}
+\newline
+\newline
+\begin{parts}
+    \part $[T]_{\beta}^{\gamma} = \begin{bmatrix}
+        2 & -1 \\
+        3 & 4 \\
+        1 & 0
+        \end{bmatrix}$ because the first component of the vector in $\mathbb{R}^3$ is equal to $2x-y$, the second component is equal to $3x+4y$, and the third component is equal to $x$, where $x$ and $y$ are the first and second components of the vector in $\mathbb{R}^2$.
+    \part $[T]_{\beta}^{\gamma} = \begin{bmatrix}
+        2 & 3 & -1 \\
+        1 & 0 & 1 \\
+        \end{bmatrix}$ because the first component of the vector in $\mathbb{R}^2$ is equal to $2x+3y-z$ and the second component is equal to $x+z$, where $x$, $y$, and $z$ are the first, second, and third components of the vector in $\mathbb{R}^3$.
+    \newline
+\end{parts}
+
+\underline{Exercise 2.2.4}
+\newline
+\newline
+To find $[T]_{\beta}^{\gamma}$, we need to find the images of the basis vectors in $\beta$ under $T$ and express them as linear combinations of the basis vectors in $\gamma$. Using the given vectors in $\beta$, which we can call $\beta_i$ for $i=1,2,3,4$, we have $T(\beta_1) = 1$, $T(\beta_2) = 1+x^2$, $T(\beta_3) = 0$, and $T(\beta_4) = 2x$. We can express these images as linear combinations of the basis vectors in $\gamma$, which we can call $\gamma_j$ for $j=1,2,3$. We have $T(\beta_1) = 1 = 1\gamma_1 + 0\gamma_2 + 0\gamma_3$, $T(\beta_2) = 1+x^2 = 1\gamma_1 + 0\gamma_2 + 1\gamma_3$, $T(\beta_3) = 0 = 0\gamma_1 + 0\gamma_2 + 0\gamma_3$, and $T(\beta_4) = 2x = 0\gamma_1 + 2\gamma_2 + 0\gamma_3$. Thus, the columns of $[T]_{\beta}^{\gamma}$ are given by the coefficients of the linear combinations we just found. Therefore, $[T]_{\beta}^{\gamma} = \begin{bmatrix}
+        1 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 2 \\
+        0 & 1 & 0 & 0 \\
+        \end{bmatrix}$.
+\newline
+
+\underline{Exercise 2.2.5.b}
+\newline
+\newline
+To find $[T]_{\beta}^{\alpha}$, we need to find the images of the basis vectors in $\beta$ under $T$ and express them as linear combinations of the basis vectors in $\alpha$. The given vectors of $\beta$ are $1$, $x$, and $x^2$. We have $T(1) = \begin{bmatrix}
+0 & 2 \\
+0 & 0 \\
+\end{bmatrix}$, $T(x) = \begin{bmatrix}
+1 & 2 \\
+0 & 0 \\
+\end{bmatrix}$, and $T(x^2) = \begin{bmatrix}
+0 & 2 \\
+0 & 2 \\
+\end{bmatrix}$. We can express these images as linear combinations of the basis vectors of $M_{2\times 2}(\mathbb{R})$, which we can call $\alpha_i$ for $i=1,2,3,4$. We have $T(1) = 0\alpha_1 + 2\alpha_2 + 0\alpha_3 + 0\alpha_4$, $T(x) = 1\alpha_1 + 2\alpha_2 + 0\alpha_3 + 0\alpha_4$, and $T(x^2) = 0\alpha_1 + 2\alpha_2 + 0\alpha_3 + 2\alpha_4$. Therefore, $[T]_{\beta}^{\alpha} = \begin{bmatrix}
+        0 & 1 & 0 \\
+        2 & 2 & 2 \\
+        0 & 0 & 0 \\
+        0 & 0 & 2 \\
+        \end{bmatrix}$.
+\newline
+
+\underline{Exercise 2.2.14}
+\newline
+\newline
+To prove that ${T,U}$ is a linearly independent subset of $\mathcal{L}(V,W)$, we need to show that $T\in\mathcal{L}(V,W)$ and $U\in\mathcal{L}(V,W)$ and that $T$ and $U$ are not scalar multiples of each other. Since the definition of $\mathcal{L}(V,W)$ is the set of all linear transformations from $V$ into $W$, $T\in\mathcal{L}(V,W)$ and $U\in\mathcal{L}(V,W)$ by their definitions. If $R(T)\cap R(U)={0}$, that means there is no nonzero vector $w\in W$ such that there exists both $v_1$ and $v_2$ and $T(v_1)=U(v_2)=w$. Suppose that $T$ and $U$ are linearly dependent. Then, there exists a $c\in F$ such that $T(v)=cU(v)$ for all $v\in V$. Since $R(T)$ is nonzero, the following is true: $T(v)=w$ for some $v\in V$ and some nonzero $w\in W$. Assuming $T(v)=w$ for some $v\in V$, we know by the linear dependence of $T$ and $U$ that $T(v)=cU(v)$. Then, $U(v)\in R(U)$ and since $T(v)\in R(T)$, we know that $R(T)\cap R(U)$ contains the element $w\in W$. Since we said that $R(T)\cap R(U)={0}$, we have a contradiction. Therefore, the assumption that that $T$ and $U$ are linearly dependent is false, so $T$ and $U$ are linearly independent and ${T,U}$ is a linearly independent subset of $\mathcal{L}(V,W)$.
+
+
+\end{document}
