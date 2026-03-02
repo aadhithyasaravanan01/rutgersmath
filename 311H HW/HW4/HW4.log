@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  25 FEB 2026 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  1 MAR 2026 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/477 HW/HW5/HW5.tex"
-(/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/477 HW/HW5/HW5.tex
+**"/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/311H HW/HW4/HW4.tex"
+(/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/311H HW/HW4/HW4.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/exam/exam.cls
@@ -181,7 +181,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count324
 \l__pdf_internal_box=\box55
-) (%OUTDIR%/HW5.aux
+) (./HW4.aux
 
 LaTeX Warning: Label `part@0@1' multiply defined.
 
@@ -189,16 +189,10 @@ LaTeX Warning: Label `part@0@1' multiply defined.
 LaTeX Warning: Label `part@0@2' multiply defined.
 
 
-LaTeX Warning: Label `part@0@1' multiply defined.
+LaTeX Warning: Label `part@0@3' multiply defined.
 
 
-LaTeX Warning: Label `part@0@2' multiply defined.
-
-
-LaTeX Warning: Label `part@0@1' multiply defined.
-
-
-LaTeX Warning: Label `part@0@2' multiply defined.
+LaTeX Warning: Label `part@0@4' multiply defined.
 
 
 LaTeX Warning: Label `part@0@1' multiply defined.
@@ -207,13 +201,43 @@ LaTeX Warning: Label `part@0@1' multiply defined.
 LaTeX Warning: Label `part@0@2' multiply defined.
 
 
+LaTeX Warning: Label `part@0@3' multiply defined.
+
+
+LaTeX Warning: Label `part@0@4' multiply defined.
+
+
 LaTeX Warning: Label `part@0@1' multiply defined.
 
 
 LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@3' multiply defined.
+
+
+LaTeX Warning: Label `part@0@1' multiply defined.
+
+
+LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@3' multiply defined.
+
+
+LaTeX Warning: Label `part@0@4' multiply defined.
+
+
+LaTeX Warning: Label `part@0@1' multiply defined.
+
+
+LaTeX Warning: Label `part@0@2' multiply defined.
+
+
+LaTeX Warning: Label `part@0@3' multiply defined.
 
 )
-\openout1 = `HW5.aux'.
+\openout1 = `HW4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -242,17 +266,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--18
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--22
+Underfull \hbox (badness 10000) in paragraph at lines 22--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--30
+Underfull \hbox (badness 10000) in paragraph at lines 26--28
 
  []
 
@@ -262,17 +281,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--34
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+[1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 36--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
+Underfull \hbox (badness 10000) in paragraph at lines 36--41
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
+Underfull \hbox (badness 10000) in paragraph at lines 42--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--47
 
  []
 
@@ -282,29 +310,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--50
  []
 
 
-Overfull \hbox (11.13347pt too wide) in paragraph at lines 52--54
-[]\OT1/cmr/m/n/10 Now we are look-ing for $\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 )$. This is equal to $[] = [] = [] = [] =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--54
-
- []
-
-
-
-[1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 56--58
-
- []
-
-
 
 [2]
-This exam contains 0 questions with 12 parts, 0 subparts, and 0 subsubparts.
-(%OUTDIR%/HW5.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--69
+
+ []
+
+
+Overfull \hbox (37.21657pt too wide) in paragraph at lines 73--74
+[]\OT1/cmr/m/n/10 The given se-ries can be writ-ten as $[][] [] + [] \OMS/cmsy/m/n/10 ^^@ []$\OT1/cmr/m/n/10 . Af-ter com-bin-ing terms, we have $[][] []$.
+ []
+
+
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
+ []
+
+
+
+[4]
+This exam contains 0 questions with 23 parts, 0 subparts, and 0 subsubparts.
+(./HW4.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -315,18 +363,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2836 strings out of 473190
- 40554 string characters out of 5715801
- 457351 words of memory out of 5000000
- 26125 multiletter control sequences out of 15000+600000
+ 2852 strings out of 473190
+ 40792 string characters out of 5715801
+ 467345 words of memory out of 5000000
+ 26142 multiletter control sequences out of 15000+600000
  560536 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,10n,65p,1369b,279s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on %OUTDIR%/HW5.pdf (2 pages, 94698 bytes).
+ 56i,10n,65p,1357b,285s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on HW4.pdf (4 pages, 142712 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -3,7 +3,7 @@ INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT /Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/350 HW/HW4/HW4.tex
-OUTPUT HW4.log
+OUTPUT %OUTDIR%/HW4.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/exam/exam.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/exam/exam.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
@@ -29,10 +29,10 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./HW4.aux
-INPUT ./HW4.aux
-INPUT HW4.aux
-OUTPUT HW4.aux
+INPUT %OUTDIR%/HW4.aux
+INPUT %OUTDIR%/HW4.aux
+INPUT %OUTDIR%/HW4.aux
+OUTPUT %OUTDIR%/HW4.aux
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
@@ -48,9 +48,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-OUTPUT HW4.pdf
+OUTPUT %OUTDIR%/HW4.pdf
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT HW4.aux
+INPUT %OUTDIR%/HW4.aux
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
