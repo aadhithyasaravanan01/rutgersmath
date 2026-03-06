@@ -1,0 +1,60 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Pham \\ Mathematical Theory of Probability}{Homework 6}{Aadhithya Saravanan}
+\runningheader{Mathematical Theory of Probability \\ Homework 6}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\newline
+The lowest value of $X$ is when all of the tosses land as tails, which is $-n$. Every time a toss lands as heads instead of tails, the value of $X$ goes up by 2, up to $n$ when all of the tosses land as heads. So, the possible values of $X$ are $\{-n,-n+2,-n+4,\dots,n-4,n-2,n\}$.
+\newline
+
+\underline{Problem 2}
+\newline
+\begin{parts}
+    \part The set of possibilities of the maximum value to appear in the two rolls is $\{1,2,3,4,5,6\}$.
+    \part The set of possibilities of the minimum value to appear in the two rolls is $\{1,2,3,4,5,6\}$.
+    \part The set of possibilities of the sum of the two rolls $\{2,3,4,\dots,10,11,12\}$.
+    \part The set of possibilities of the difference of the first and second rolls $\{-5,-4,-3,\dots,3,4,5\}$.
+    \newline
+\end{parts}
+
+\underline{Problem 3}
+\newline
+\newline
+The probablity of 0 sales and 0 dollars is $(1-0.3)(1-0.6)=0.28$. The probability of exactly 1 sale is $0.3\cdot(1-0.6)+(1-0.3)\cdot0.6=0.54$. The probability of the sale being a regular model is $0.5$ and would result in 500 dollars. So, the probability of 500 dollars is $0.54\cdot0.5=0.27$. The probability of the sale being a deluxe model is $0.5$ and would result in 1000 dollars. So, the probability of 1000 dollars from one sale is $0.54\cdot0.5=0.27$. The probability of 2 sales is $0.3\cdot0.6=0.18$. The probability of both sales being the regular model are $0.5\cdot0.5=0.25$, so the probability of 1000 dollars from two sales is $0.18\cdot0.25=0.045$. So, the total probability of 1000 dollars is $0.27+0.045=0.315$. Of the two sales, the probability of one sale being the regular model and another being the deluxe model is $2\cdot0.5\cdot0.5=0.5$, so the probability of 1500 dollars from two sales is $0.18\cdot0.5=0.09$. The probability of both sales being deluxe is $0.5\cdot0.5=0.25$, so the probability of 2000 dollars is $0.18\cdot0.25=0.045$. Therefore, the probability mass function is \[
+    P_X(x) = \begin{cases}
+    0.28 & \text{if } x = 0 \\
+    0.27 & \text{if } x = 500 \\
+    0.315 & \text{if } x = 1000 \\
+    0.09 & \text{if } x = 1500 \\
+    0.045 & \text{if } x = 2000 \\
+    0 & \text{otherwise}
+    \end{cases}
+\]
+\newline
+
+\underline{Problem 4}
+\newline
+\newline
+The total number of arrangements of the numbers are $5!$. To find $P(X=0)$, we want the number of possibilities in which player 1 loses the first round. This would be any case in which player 2 has a higher number than player 1. This happens in $\binom{5}{2}$ cases, as we are finding the number of ways to assign 2 numbers from 5 to 2 players, with one valid ordering. Since the numbers of the other 3 players do not matter, we multiply by $3!$ to account for their number arrangements. So, the number of ways for player 1 to lose the first round is $\binom{5}{2}\cdot3!=60$. Therefore, $P(X=0)=\frac{60}{5!}=\frac{1}{2}$. For $P(X=1)$, we can find the number of cases that player 1's number is greater than player 2's number, but less than player 3' number. So, we are choosing 3 numbers from 5, with one valid ordering. The other two numbers can be anything, so we multiply by $2!$. So, we have $\binom{5}{3}\cdot2!=20$, Therefore, $P(X=1)=\frac{20}{5!}=\frac{1}{6}$. For $P(X=2)$, we are counting the cases where player 1's number is higher than both player 2's and player 3's numbers, but less than player 4's number. So, we choose 4 numbers from 5, with two valid orderings, as player 2 and player 3's numbers can be interchanged. The remaining number has only one choice. So, the number of cases is $\binom{5}{4}\cdot2!=10$. Therefore, $P(X=2)=\frac{10}{5!}=\frac{1}{12}$. For $P(X=3)$, we are counting the cases where player 1's number is only lower than player 5's number. Player 5 must get the highest number and player 1 must get the second highest. The other 3 can be arranged in any way, so we have $3!$ cases. Therefore, $P(X=3)=\frac{3!}{5!}=\frac{1}{20}$. For $P(X=4)$, we are counting the cases where player 1's number is the highest, which means the other 4 players' can be arranged in any way, giving $4!$ cases. So, $P(X=4)=\frac{4!}{5!}=\frac{1}{5}$. 
+\newline
+
+\underline{Problem 5}
+\newline
+\begin{parts}
+    \part $P(X=0)=0$, $P(X=1)=F(1)-F(1^-)=\frac{1}{2}-\frac{1}{4}=\frac{1}{4}$, $P(X=2)=F(2)-F(2^-)=\frac{11}{12}-\frac{3}{4}=\frac{1}{6}$, and $P(X=3)=F(3)-F(3^-)=1-\frac{11}{12}=\frac{1}{12}$.
+    \part $P(\frac{1}{2}<X<\frac{3}{2})=F(\frac{3}{2}^-)-F(\frac{1}{2})=(\frac{1}{2}+\frac{\frac{3}{2}-1}{4})-\frac{\frac{1}{2}}{4}=\frac{1}{2}$
+\end{parts}
+
+\end{document}
