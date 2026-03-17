@@ -1,0 +1,206 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Tahvildar-Zadeh \\ Linear Algebra}{Homework 6}{Aadhithya Saravanan}
+\runningheader{Linear Algebra \\ Homework 6}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{}
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 2.5.2.b}
+\newline
+\newline
+First, we solve for $[\beta'_1]_\beta$ and $[\beta'_2]_\beta$. We do this by setting up the equations $a\beta_1+b\beta_2=\beta'_1$ and $c\beta_1+d\beta_2=\beta'_2$. Solving this system gives two column vectors. Putting them together forms the change of coordinate matrix that changes $\beta'$-coordinates into $\beta$-coordinates: $
+\begin{bmatrix}
+    4 & 1 \\
+    2 & 3
+\end{bmatrix}$.
+
+\underline{Exercise 2.5.2.c}
+\newline
+\newline
+Since the basis for $\beta'$-coordinates are the standard unit vectors in $\mathbb{R}^2$, we just find the inverse of the matrix whose columns are made up of the vectors in $\beta$. This matrix is the change of coordinate matrix that changes $\beta'$-coordinates into $\beta$-coordinates: $
+\begin{bmatrix}
+    2 & 5 \\
+    -1 & -3
+\end{bmatrix}$.
+
+\underline{Exercise 2.5.3.c}
+\newline
+\newline
+First, we solve for $[\beta'_1]_\beta$ and $[\beta'_2]_\beta$. We do this by setting up the equations $a\beta_1+b\beta_2=\beta'_1$ and $c\beta_1+d\beta_2=\beta'_2$. Solving this system gives two column vectors. Putting them together forms the change of coordinate matrix that changes $\beta'$-coordinates into $\beta$-coordinates: $
+\begin{bmatrix}
+    0 & -1 & 0 \\
+    1 & 0 & 0 \\
+    -3 & 2 & 1
+\end{bmatrix}$.
+\newline
+
+\underline{Exercise 2.5.5}
+\newline
+\newline
+By Theorem 2.23, we know $[T]_{\beta'}=Q^{-1}[T]_\beta Q$, where $Q$ is the the change of coordinate matrix from $\beta'$-coordinates into $\beta$-coordinates. First, we compute $Q$ by writing each vector in $\beta'$ as a linear combination of vectors in $\beta$, giving two vectors. When forming the change of coordinate matrix using the columns made by these vectors, we have $Q=
+\begin{bmatrix}
+    1 & 1 \\
+    1 & -1
+\end{bmatrix}$. We are given the inverse of this matrix, so $Q^{-1}=
+\begin{bmatrix}
+    \frac{1}{2} & \frac{1}{2} \\
+    \frac{1}{2} & -\frac{1}{2}
+\end{bmatrix}$. Now, we compute $[T]_\beta$. We apply $T$ to each vector in $\beta$, giving two vectors. When forming the matrix using the columns made by these vectors, we have $[T]_\beta=
+\begin{bmatrix}
+    0 & 1 \\
+    0 & 0
+\end{bmatrix}$. Now we can compute $[T]_{\beta'}$. Doing the matrix multiplication, we get $[T]_{\beta'}=
+\begin{bmatrix}
+    \frac{1}{2} & -\frac{1}{2} \\
+    \frac{1}{2} & -\frac{1}{2}
+\end{bmatrix}$.
+\newline
+
+\underline{Exercise 2.5.6.b}
+\newline
+\newline
+First, we compute $[L_A]_\beta$. We apply $L_A$ to each vector in $\beta$, giving two vectors. Then, we write each of those vectors in terms of the basis $\beta$, giving two vectors. When forming the matrix using the columns made by these vectors, we have $[L_A]_\beta=
+\begin{bmatrix}
+    3 & 0 \\
+    0 & -1
+\end{bmatrix}$. To find $Q$, we write the vectors in $\beta$ in the standard basis, which are the same vectors. When forming the matrix using the columns made by these vectors, we have $Q=
+\begin{bmatrix}
+    1 & 1 \\
+    1 & -1
+\end{bmatrix}$.
+\newline
+
+\underline{Exercise 2.5.6.c}
+\newline
+\newline
+First, we compute $[L_A]_\beta$. We apply $L_A$ to each vector in $\beta$, giving three vectors. Then, we write each of those vectors in terms of the basis $\beta$, giving three vectors. When forming the matrix using the columns made by these vectors, we have $[L_A]_\beta=
+\begin{bmatrix}
+    2 & 2 & 2 \\
+    -2 & -3 & -4 \\
+    1 & 1 & 2
+\end{bmatrix}$. To find $Q$, we write the vectors in $\beta$ in the standard basis, which are the same vectors. When forming the matrix using the columns made by these vectors, we have $Q=
+\begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & 0 & 1 \\
+    1 & 1 & 2
+\end{bmatrix}$.
+\newline
+
+\underline{Exercise 3.2.5.e}
+\newline
+\newline
+After putting the matrix in reduced row echelon form, we have the identity matrix in dimension 3. Since there are no zero rows, rank is equal to 3. To find the inverse matrix, we form the matrix $[A|I]$, where $A$ is the given matrix. This produces $
+\begin{bmatrix}
+    1 & 2 & 1 & 1 & 0 & 0 \\
+    -1 & 1 & 2 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 0 & 0 & 1
+\end{bmatrix}$. We then reduce this to reduced row echelon form and take the right half of the result as the inverse. Doing this, we get the inverse as $
+\begin{bmatrix}
+    \frac{1}{6} & -\frac{1}{3} & \frac{1}{2} \\
+    \frac{1}{2} & 0 & -\frac{1}{2} \\
+    -\frac{1}{6} & \frac{1}{3} & \frac{1}{2} 
+\end{bmatrix}$.
+\newline
+
+\underline{Exercise 3.2.6.a}
+\newline
+\newline
+By Corollary 1 of Theorem 2.18, $T$ is invertible if and only if $[T]_\beta$ is invertible. Let $\beta$ be the ordered basis of $P_2(\mathbb{R})$ defined by $\beta=\{1,x,x^2\}$. We apply $T$ to each vector in $\beta$ and write the resulting vector as a linear combination of the vectors in $\beta$. When forming the matrix using the columns made by these vectors, we have $[T]_\beta=
+\begin{bmatrix}
+    -1 & 2 & 2 \\
+    0 & -1 & 4 \\
+    0 & 0 & -1
+\end{bmatrix}$. Since this matrix is upper triangular, we can take its determinant by multiplying its diagonal entries, resulting in -1. Since -1 is nonzero, $[T]_\beta$ is invertible and $T$ is invertible by Corollary 1 of Theorem 2.18. To compute $T^{-1}$, we first take the inverse of $[T]_\beta$, giving $[T]_\beta^{-1}=
+\begin{bmatrix}
+    -1 & -2 & -10 \\
+    0 & -1 & -4 \\
+    0 & 0 & -1
+\end{bmatrix}$. Since $[T]_\beta^{-1}=[T^{-1}]_\beta$, we have $[T^{-1}(a_0+a_1x+a_2x^2)]_\beta=
+\begin{bmatrix}
+    -1 & -2 & -10 \\
+    0 & -1 & -4 \\
+    0 & 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+    a_0 \\
+    a_1 \\
+    a_2
+\end{bmatrix}=
+\begin{bmatrix}
+    -a_0-2a_1-10a_2 \\
+    -a_1-4a_2 \\
+    -a_2
+\end{bmatrix}$. Therefore, $T^{-1}(a_0+a_1x+a_2x^2)=(-a_0-2a_1-10a_2)+(-a_1-4a_2)-a_2x^2$.
+\newline
+
+\underline{Exercise 3.3.2.b}
+\newline
+\newline
+The dimension of the solution space is given by the number of variables in the system minus the rank of the coefficient matrix. In reduced row echelon form, the matrix is $
+\begin{bmatrix}
+    1 & 0 & -\frac{1}{3} \\
+    0 & 1 & -\frac{2}{3}
+\end{bmatrix}$. This tells us the rank is 2, and we know the number of variables is 3. So, the dimension of the solution space is 1. To find a basis for the solution space, we can use the reduced row echelon form of the coefficient matrix augmented with the zero vector in $\mathbb{R}^2$. After multiplying by 3 to remove fractions, we have one vector in the basis of the solution space: $
+\begin{bmatrix}
+    1 \\
+    2 \\
+    3
+\end{bmatrix}$.
+\newline
+
+\underline{Exercise 3.3.3.b}
+\newline
+\newline
+First, we find a single solution to the nonhomogenous system. The vector $
+\begin{bmatrix}
+    1 \\
+    1 \\
+    1
+\end{bmatrix}$ can easily be verified to be a solution. By Theorem 3.9, to find all solutions to the system, we can add the particular solution to the solution set for the homogeneous system. So, the solution set for the nonhomogeneous system is $\left\{
+\begin{bmatrix}
+    1 \\
+    1 \\
+    1
+\end{bmatrix} + t
+\begin{bmatrix}
+    1 \\
+    2 \\
+    3
+\end{bmatrix}\middle|t\in\mathbb{R}
+\right\}$.
+\newline
+
+\underline{Exercise 3.4.6}
+\newline
+\newline
+If the vector $s$ satisfies $T^{-1}(1,11)$, then $T(s)=(1,11)$ must hold. So, it must satisfy the system of equations with the equations $a+b=1$ and $2a-c=11$. The coefficient matrix is given by $
+\begin{bmatrix}
+    1 & 1 & 0 \\
+    2 & 0 & -1
+\end{bmatrix}$ and we augment this with the vector $
+\begin{bmatrix}
+    1 \\
+    11
+\end{bmatrix}$. This results in a reduced row echelon form with one free variable. If we let the last component be the free variable and multiply by 2 in the homogeneous solution to remove fractions, we have a set of solutions for $T^{-1}(1,11)$. This set is given by $\left\{
+\begin{bmatrix}
+    \frac{11}{2} \\
+    -\frac{9}{2} \\
+    0
+\end{bmatrix} + t
+\begin{bmatrix}
+    1 \\
+    -1 \\
+    2
+\end{bmatrix}\middle|t\in\mathbb{R}
+\right\}$.
+
+
+\end{document}
