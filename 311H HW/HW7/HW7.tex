@@ -1,0 +1,82 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Rong \\ Introduction to Real Analysis I}{Homework 7}{Aadhithya Saravanan}
+\runningheader{Introduction to Real Analysis I \\ Homework 7}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 3.4.1}
+\newline
+\newline
+$P\cap K$ is always compact. By the Heine-Borel Theorem, $P\cap K$ must be closed and bounded to be compact. Since $P$ is perfect, it is closed, and since $K$ is compact, it is also closed. The intersection of two closed sets is also closed. Since $K$ is bounded, any subset of $K$ is also bounded. $P\cap K$ is a subset of $K$, so it is bounded. Therefore, $P\cap K$ is closed and bounded, so it is compact.
+\newline
+\newline
+$P\cap K$ is not always perfect. Let $P=\mathbb{R}$ and $K$ be $\{\frac{1}{n}\mid n\in \mathbb{N}\}\cup\{0\}$. $P$ is perfect since every real number is the limit of a sequence of real numbers. $K$ is compact, since it is bounded by 1 and its only limit point, 0, is in the set. $P\cap K=K$, which is not perfect, as its only limit point is 0 and all other elements are isolated. Therefore, $P\cap K$ is not always perfect.
+\newline
+
+\underline{Exercise 3.4.2}
+\newline
+\newline
+There does not exist a perfect set with only rational numbers. Assume $P$ is a nonempty perfect set with only rational numbers. By Theorem 3.4, a nonempty perfect set is uncountable, so $P$ must have an uncountable number of elements. Since $\mathbb{Q}$ is a countable set, any subset of it is either countable or finite. So, since $P$ is uncountable, it must have elements that are not rational. This is a contradiction to the fact that $P$ only has rational numbers. Therefore, there does not exist a perfect set with only rational numbers.
+\newline
+
+\underline{Exercise 3.4.7}
+\newline
+\begin{parts}
+    \part $\mathbb{Q}$ is totally disconnected if for any distinct $x,y\in \mathbb{Q}$, there exist separated sets $A$ and $B$ with $x\in A$ and $y\in B$ and $\mathbb{Q}=A\cup B$. Without loss of generality, let $x<y$. By the Density of the Irrationals in $\mathbb{R}$, choose $z\in\mathbb{I}$ with $x<z<y$. Let $A=\{s\in \mathbb{Q}\mid s<z\}$ and $B=\{r\in \mathbb{Q}\mid r>z\}$. Since $x\in \mathbb{Q}$ and $x<z$, $x\in A$. Also, since $y\in \mathbb{Q}$ and $y>z$, $y\in B$.
+    \newline
+    \newline
+    Now, we have to show that $A$ and $B$ are separated. $\overline{A}$ is equal to $A\cup L_A$, where $L_A$ is the set of limit points of $A$. For any real number $a\le z$, there exists a sequence of terms from $A$ that converge to $a$, as the rationals are dense in $\mathbb{R}$. So, $L_A=\{c\in \mathbb{R}\mid c\le z\}$. Then, $\overline{A}=A\cup L_A=\{c\in \mathbb{R}\mid c\le z\}$. Since $B=\{r\in \mathbb{Q}\mid r>z\}$, $\overline{A}\cap B=\emptyset$. Similarly, $\overline{B}=B\cup L_B=\{d\in \mathbb{R}\mid d\ge z\}$, so $A\cap\overline{B}=\emptyset$. Therefore, $\mathbb{Q}$ is totally disconnected.
+    \part The set of irrational numbers is also totally disconnected. The same argument can be used as for the rationals, instead using the Density of the Rationals in $\mathbb{R}$ to find a $c\in \mathbb{Q}$ such that $a<c<b$ for any irrationals $a$ and $b$ with $a<b$. $A=\{x\in \mathbb{I}\mid x<c\}$ and $B=\{y\in \mathbb{I}\mid y>c\}$ can be used for this argument. So, the set of irrationals is totally disconnected.
+    \newline
+\end{parts}
+
+\underline{Exercise 3.5.5}
+\newline
+\newline
+Assume that
+\[\mathbb{R}=\bigcup_{n=1}^\infty F_n\]
+where for each $n\in \mathbb{N}$, $F_n$ is a closed set with no nonempty open intervals. Taking the complement of each side, we have
+\[\mathbb{R}^c=(\bigcup_{n=1}^\infty F_n)^c\]
+\[\emptyset=\bigcap_{n=1}^\infty F_n^c\]
+with $F_n^c$ open. Since $F_1$ does not contain any nonempty open intervals, $F_1^c$ is nonempty. Choose any $x_1\in F_1^c$. There exists $\epsilon_1$ such that $V_{\epsilon_1}(x_1)=(x_1-\epsilon_1,x_1+\epsilon_1)\subseteq F_1^c$. Let $I_1=[x_1-\frac{\epsilon_1}{2},x_1+\frac{\epsilon_1}{2}]$, which is a subset of $F_1^c$. Since $F_2$ does not contain any nonempty open intervals, it cannot contain the interior of $I_1$, $(x_1-\frac{\epsilon_1}{2},x_1+\frac{\epsilon_1}{2})$. So, there exists $x_2\in F_2^c$ such that $x_2$ is in the interior of $I_1$. Since, $F_2^c$ and the interior of $I_1$ are open, their intersection is open. Therefore, there exists $\epsilon_2$ such that $V_{\epsilon_2}(x_2)=(x_2-\epsilon_2,x_2+\epsilon_2)\subseteq F_2^c\cap I_1$. Let $I_2=[x_2-\frac{\epsilon_2}{2},x_2+\frac{\epsilon_2}{2}]$. So, $I_2\subseteq I_1$ and $I_2\subseteq F_2^c$. In this way, we can always choose an $x_n\in F_n^c$ such that $x_n\in I_{n-1}$. Also, we can choose $\epsilon_n$ such that $V_{\epsilon_n}(x_n)=(x_n-\epsilon_n,x_n+\epsilon_n)\subseteq F_n^c\cap I_{n-1}$ and $I_n=[x_n-\frac{\epsilon_n}{2},x_n+\frac{\epsilon_n}{2}]$. By this construction, $I_{n+1}\subseteq I_n$. By the Nested Interval Property,
+\[\bigcap_{n=1}^\infty I_n\ne\emptyset\]
+But, $\bigcap_{n=1}^\infty I_n\subseteq\bigcap_{n=1}^\infty F_n^c=\emptyset$. This is a contradiction, so it must be impossible for
+\[\mathbb{R}=\bigcup_{n=1}^\infty F_n\]
+to hold where for each $n\in \mathbb{N}$, $F_n$ is a closed set with no nonempty open intervals.
+\newline
+
+\underline{Exercise 3.5.6}
+\newline
+\newline
+From the last exercise, we know that the following cannot hold:
+\[\mathbb{R}=\bigcup_{n=1}^\infty F_n\]
+where for each $n\in \mathbb{N}$, $F_n$ is a closed set with no nonempty open intervals. We know that $\mathbb{Q}$ can be written as a countable union of closed sets with no nonempty open intervals. This is because we can construct $\mathbb{Q}$ with a union of all the singleton sets each containing one rational number. Each of these sets is closed, as they have no limit points, and therefore contain all of their limit points. They also do not contain any nonempty open intervals, as they contain only one element. There are a countable number of the sets, as there are a countable number of rational numbers. $\mathbb{R}=\mathbb{I}\cup \mathbb{Q}$ and the union of two countable collections of sets is itself a countable collection of sets. Since $\mathbb{Q}$ can be written as a countable union of closed sets with no nonempty open intervals and $\mathbb{R}$ cannot, $\mathbb{I}$ must not be able to be written as a countable union of closed sets with no nonempty open intervals. This implies that $\mathbb{I}$ cannot be written as a countable union of closed sets, as every nonempty open interval contains rational numbers by the Density of $\mathbb{Q}$ in $\mathbb{R}$. So, $\mathbb{I}$ is not $F_\sigma$.
+\newline
+\newline
+Now, we are going to show that $\mathbb{Q}$ is not $G_\delta$. Assume $\mathbb{Q}$ is $G_\delta$. Then,
+\[\mathbb{Q}=\bigcap_{n=1}^\infty F_n\]
+with $F_n$ open. Taking the complement of each side, we have
+\[\mathbb{Q}^c=(\bigcap_{n=1}^\infty F_n)^c\]
+\[\mathbb{R}\backslash\mathbb{Q}=\bigcup_{n=1}^\infty F_n^c\]
+\[\mathbb{I}=\bigcup_{n=1}^\infty G_n\]
+where $G_n$ is closed. However, this contradicts the last part of the exercise, as $\mathbb{I}$ is not $F_\sigma$. So, $\mathbb{Q}$ is not $G_\delta$.
+\newline
+
+\underline{Exercise 3.5.8}
+\newline
+\newline
+First, assume that $E$ is nowhere-dense in $\mathbb{R}$. We want to show that $\overline{E}^c$ is dense in $\mathbb{R}$. Choose any nonempty open interval $V\subseteq \mathbb{R}$. Then, $V\nsubseteq \overline{E}$, as $\overline{E}$ contains no nonempty open intervals. That means there exists an $x\in V$ such that $x\notin\overline{E}$. So, $x\in\overline{E}^c$. Since $x\in V$, we have found a point of $\overline{E}^c$ in the arbitrary interval $V$. Because every open interval contains a point of $\overline{E}^c$, $\overline{E}^c$ is dense in $\mathbb{R}$.
+\newline
+\newline
+Now, assume that $\overline{E}^c$ is dense in $\mathbb{R}$. We want to show that $E$ is nowhere-dense in $\mathbb{R}$. This means we want to show that $\overline{E}$ contains no nonempty open interval. Assume $\overline{E}$ contains a nonempty open interval $V=(a,b)$. If $V\subseteq\overline{E}$, no point of $V$ can be in $\overline{E}^c$. So, $(a,b)\cap\overline{E}^c=\emptyset$. However, we assumed that $\overline{E}^c$ is dense in $\mathbb{R}$. By definition of density, there must exist a $c\in\overline{E}^c$ such that $a<c<b$. So, $c\in V$. Then, $c\in(a,b)\cap\overline{E}^c$ and $(a,b)\cap\overline{E}^c\ne\emptyset$. This is a contradiction, so our assumption must be false. Therefore, a set $E$ is nowhere-dense in $\mathbb{R}$ if and only if $\overline{E}^c$ is dense in $\mathbb{R}$.
+
+\end{document}
