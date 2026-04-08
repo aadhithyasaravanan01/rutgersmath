@@ -1,0 +1,417 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Tahvildar-Zadeh \\ Linear Algebra}{Homework 7}{Aadhithya Saravanan}
+\runningheader{Linear Algebra \\ Homework 7}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{}
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 5.1.4.c}
+\newline
+\newline
+\[\det{(A-\lambda I)}=0\]
+\[
+\begin{vmatrix}
+    i-\lambda & 1 \\
+    2 & -i-\lambda
+\end{vmatrix}=0
+\]
+\[(i-\lambda)(-i-\lambda)-(1)(2)=0\]
+\[-i^2+\lambda^2-2=0\]
+\[\lambda=1,-1\]
+$\lambda=1:$
+\[A-\lambda I\]
+\[
+\begin{bmatrix}
+    i-1 & 1 \\
+    2 & -i-1
+\end{bmatrix}
+\to
+\begin{bmatrix}
+    i-1 & 1 \\
+    0 & 0
+\end{bmatrix}
+\]
+\[v_1=
+\begin{bmatrix}
+    1 \\
+    1-i
+\end{bmatrix}
+\]
+$\lambda=-1:$
+\[A-\lambda I\]
+\[
+\begin{bmatrix}
+    i+1 & 1 \\
+    2 & -i+1
+\end{bmatrix}
+\to
+\begin{bmatrix}
+    1+i & 1 \\
+    0 & 0
+\end{bmatrix}
+\]
+\[v_2=
+\begin{bmatrix}
+    1 \\
+    -1-i
+\end{bmatrix}
+\]
+$\{v_1,v_2\}$ forms a basis for $\mathbb{C}^2$, as two linearly independent vectors form a basis for vector spaces of dimension 2. The matrix $Q$ is formed by the basis vectors, so
+\[Q=
+\begin{bmatrix}
+    1 & 1 \\
+    1-i & -1-i
+\end{bmatrix}
+\]
+The matrix $D$ is the diagonal matrix consisting of the corresponding eigenvalues, so
+\[D=
+\begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+\end{bmatrix}
+\]
+\newline
+
+\underline{Exercise 5.1.4.d}
+\newline
+\newline
+\[\det{(A-\lambda I)}=0\]
+\[
+\begin{vmatrix}
+    2-\lambda & 0 & -1 \\
+    4 & 1-\lambda & -4 \\
+    2 & 0 & -1-\lambda
+\end{vmatrix}=0
+\]
+\[(2-\lambda)((1-\lambda)(-1-\lambda)-(-4)(0))-1((4)(0)-(1-\lambda)(2))=0\]
+\[-\lambda^3+2\lambda^2-\lambda=0\]
+\[\lambda=0,1\]
+$\lambda=1:$
+\[A-\lambda I\]
+\[
+\begin{bmatrix}
+    1 & 0 & -1 \\
+    4 & 0 & -4 \\
+    2 & 0 & -2
+\end{bmatrix}
+\to
+\begin{bmatrix}
+    1 & 0 & -1 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0
+\end{bmatrix}
+\]
+\[v_1=
+\begin{bmatrix}
+    1 \\
+    0 \\
+    1
+\end{bmatrix},v_2=
+\begin{bmatrix}
+    0 \\
+    1 \\
+    0
+\end{bmatrix}
+\]
+$\lambda=0:$
+\[A-\lambda I\]
+\[
+\begin{bmatrix}
+    2 & 0 & -1 \\
+    4 & 1 & -4 \\
+    2 & 0 & -1
+\end{bmatrix}
+\to
+\begin{bmatrix}
+    2 & 0 & -1 \\
+    0 & 1 & -2 \\
+    0 & 0 & 0
+\end{bmatrix}
+\]
+\[v_3=
+\begin{bmatrix}
+    1 \\
+    4 \\
+    2
+\end{bmatrix}
+\]
+$\{v_1,v_2,v_3\}$ forms a basis for $\mathbb{R}^3$, as three linearly independent vectors form a basis for vector spaces of dimension 3. The matrix $Q$ is formed by the basis vectors, so
+\[Q=
+\begin{bmatrix}
+    1 & 0 & 1 \\
+    0 & 1 & 4 \\
+    1 & 0 & 2
+\end{bmatrix}
+\]
+The matrix $D$ is the diagonal matrix consisting of the corresponding eigenvalues, so
+\[D=
+\begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 0
+\end{bmatrix}
+\]
+\newline
+
+\underline{Exercise 5.1.5.b}
+\newline
+\newline
+Let $\gamma$ be the standard basis for $\mathbb{R}^3$. Then, $[T]_\gamma^\gamma=$
+\[
+\begin{bmatrix}
+    7 & -4 & 10 \\
+    4 & -3 & 8 \\
+    -2 & 1 & -2
+\end{bmatrix}
+\]
+The eigenvalues of this matrix are $\lambda=2,1,-1$, so the eigenvalues of $T$ are $\lambda=2,1,-1$. Solving for the eigenvectors as in the last exercise, we get
+\[
+v_1=
+\begin{bmatrix}
+    -2 \\
+    0 \\
+    1
+\end{bmatrix},
+v_2=
+\begin{bmatrix}
+    -1 \\
+    1 \\
+    1
+\end{bmatrix},
+v_3=
+\begin{bmatrix}
+    1 \\
+    2 \\
+    0
+\end{bmatrix}
+\]
+These vectors form an ordered basis $\beta$ for $\mathbb{R}^3$ using the eigenvectors of $T$. Then, the diagonal matrix for $[T]_\beta^\beta$ is formed by the eigenvalues of $[T]_\gamma^\gamma$. So,
+\[
+[T]_\beta^\beta=
+\begin{bmatrix}
+    2 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & -1
+\end{bmatrix}
+\]
+
+\underline{Exercise 5.1.5.f}
+\newline
+\newline
+Let $\gamma$ be the standard basis for $P_3(\mathbb{R})$. We can form the columns of $[T]_\gamma^\gamma=$ by solving for $T(1)$, $T(x)$, $T(x^2)$, and $T(x^3)$.
+\[
+\begin{bmatrix}
+    1 & 0 & 0 & 0 \\
+    1 & 3 & 4 & 8 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+The eigenvalues of this matrix are $\lambda=3,1$, so the eigenvalues of $T$ are $\lambda=3,1$. Solving for the eigenvectors as in the last exercise, we get
+\[
+v_1=
+\begin{bmatrix}
+    0 \\
+    1 \\
+    0 \\
+    0
+\end{bmatrix},
+v_2=
+\begin{bmatrix}
+    -2 \\
+    1 \\
+    0 \\
+    0
+\end{bmatrix},
+v_3=
+\begin{bmatrix}
+    -4 \\
+    0 \\
+    1 \\
+    0
+\end{bmatrix},
+v_4=
+\begin{bmatrix}
+    -8 \\
+    0 \\
+    0 \\
+    1
+\end{bmatrix}
+\]
+Putting these vectors back into $P_3(\mathbb{R})$, we get $\beta=\{x,-2+x,-4+x^2,-8+x^3\}$. These vectors form an ordered basis $\beta$ for $P_3(\mathbb{R})$ using the eigenvectors of $T$. Then, the diagonal matrix for $[T]_\beta^\beta$ is formed by the eigenvalues of $[T]_\gamma^\gamma$. So,
+\[
+[T]_\beta^\beta=
+\begin{bmatrix}
+    3 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+\newline
+
+\underline{Exercise 5.1.9.a}
+\newline
+\newline
+First, we will prove the forward direction. Assume that $T$ is an invertible linear operator. We want to show that it is not possible for one of its eigenvalues to be 0. If $T$ is invertible, then by Theorem 2.4, $N(T)$ contains only the zero vector. Assume that 0 is an eigenvalue of $T$. Then, there must exist a nonzero vector $v$ such that $T(v)=0v=\vec{0}$. This means, $v\in N(T)$, which is a contradiction to $N(T)$ containing only the zero vector. Therefore, $T$ does not have an eigenvalue of 0.
+\newline
+\newline
+Now, we will prove the backward direction. Assume 0 is not an eigenvalue of $T$. We want to show that $T$ is invertible. Since 0 is not an eigenvalue of $T$, there does not exist a nonzero vector $v$ such that $T(v)=0v=\vec{0}$. So, $N(T)$ contains only the zero vector. By Theorem 2.4, $T$ is one-to-one. By Theorem 2.5, since the vector space is finite-dimensional, $T$ is onto. So, since $T$ is bijective, it is invertible.
+\newline
+
+\underline{Exercise 5.1.9.b}
+\newline
+\newline
+First, we will prove the forward direction. Assume $\lambda$ is an eigenvalue of the invertible linear operator $T$. $\lambda$ is nonzero, by the previous part. We want to show that $\lambda^{-1}$ is an eigenvalue of $T^{-1}$. Since $\lambda$ is an eigenvalue of $T$, there exists a nonzero vector $v$ such that $T(v)=\lambda v$. Since $T$ is invertible, we can apply $T^{-1}$ to both sides of the equation, getting $T^{-1}(T(v))=T^{-1}(\lambda v)$. Then, $v=\lambda T^{-1}(v)$, since Theorem 2.17 says $T^{-1}$ is linear if $T$ is linear and invertible. Then, $\lambda^{-1}v=T^{-1}(v)$. So, $\lambda^{-1}$ is an eigenvalue of $T^{-1}$.
+\newline
+\newline
+Now, we will prove the backward direction. Assume $\lambda^{-1}$ is an eigenvalue of $T^{-1}$ and $T$ is linear and invertible. $\lambda$ is nonzero, by the previous part. We want to show that $\lambda$ is an eigenvalue of $T$. Since $\lambda^{-1}$ is an eigenvalue of $T^{-1}$, there exists a vector nonzero vector $v$ such that $T^{-1}(v)=\lambda^{-1}v$. Applying $T$ to both sides, $T(T^{-1}(v))=T(\lambda^{-1}v)$. Then, $v=\lambda^{-1}T(v)$, since $T$ is linear. Then, $\lambda v=T(v)$. So, $\lambda$ is an eigenvalue of $T$.
+\newline
+
+\underline{Exercise 5.1.10}
+\newline
+\newline
+If $M$ is upper triangular, $M-\lambda I$ is also upper triangular. Let $N=M-\lambda I$. The diagonal entries of $N$, $N_{i,i}$ are equal to $M_{i,i}-\lambda$. The eigenvalues of $M$ are the values of $\lambda$ that satisfy $\det(M-\lambda I)=\det(N)=0$. Since $N$ is upper triangular, its determinant is the product of its diagonal entries, so $\det(N)=(N_{1,1})\cdot(N_{2,2})\cdot\dots\cdot(N_{n-1,n-1})\cdot(N_{n,n})=(M_{1,1}-\lambda)\cdot(M_{2,2}-\lambda)\cdot\dots\cdot(N_{n-1,n-1}\lambda)\cdot(M_{n,n}\lambda)$, where $N$ is of dimension $n\times n$. This polynomial is already factored, and the values of $\lambda$ that make it equal to zero are the diagonal entries of $M$. So, the eigenvalues of $M$ are the diagonal entries of $M$.
+\newline
+
+\underline{Exercise 5.2.2.b}
+\newline
+\newline
+$A$ is diagonalizable. After solving $\det(A-\lambda I)=0$, we get the eigenvalues of $A$ to be 4 and $-2$. Since there are two distinct eigenvalues for a $2\times2$ dimensional matrix, $A$ is diagonalizable. The corresponding eigenvectors for 4 and $-2$ are
+$
+\begin{bmatrix}
+    1 \\
+    1
+\end{bmatrix}
+$ and
+$
+\begin{bmatrix}
+    1 \\
+    -1
+\end{bmatrix}
+$ respectively. So,
+\[
+Q=
+\begin{bmatrix}
+    1 & 1 \\
+    1 & -1
+\end{bmatrix}
+\] and
+\[
+D=
+\begin{bmatrix}
+    4 & 0 \\
+    0 & -2
+\end{bmatrix}
+\]
+\newline
+
+\underline{Exercise 5.2.2.d}
+\newline
+\newline
+$A$ is diagonalizable. After solving $\det(A-\lambda I)=0$, we get the eigenvalues of $A$ to be 3 and $-1$. Since the geometric multiplicity of $\lambda=3$ is 2 (matching its algebraic multiplicity) and the geometric multiplicity of $\lambda=-1$ is 1, the sum of the dimensions of the eigenspaces equals the dimension of the matrix ($n=3$). Thus, $A$ is diagonalizable. The corresponding eigenvectors for 3 are
+$
+\begin{bmatrix}1 \
+    1 \
+    0
+\end{bmatrix}
+$ and
+$
+\begin{bmatrix}
+    0 \
+    0 \
+    1
+\end{bmatrix}$
+, and the corresponding eigenvector for $-1$ is
+$
+\begin{bmatrix}2 \
+    4 \
+    3
+\end{bmatrix}$. So,
+\[Q=
+\begin{bmatrix}
+    1 & 0 & 2 \\
+    1 & 0 & 4 \\
+    0 & 1 & 3
+\end{bmatrix}
+\] and
+\[
+D=
+\begin{bmatrix}
+    3 & 0 & 0 \\
+    0 & 3 & 0 \\
+    0 & 0 & -1
+\end{bmatrix}
+\]
+\newline
+
+\underline{Exercise 5.2.2.f}
+\newline
+\newline$A$ is not diagonalizable. After solving $\det(A-\lambda I)=0$, we get the eigenvalues of $A$ to be 1 and 3. The algebraic multiplicity of $\lambda=1$ is 2. However, solving $(A-(1)I)v=0$ to find the eigenspace for $\lambda=1$ yields only one linearly independent eigenvector, which is
+$
+\begin{bmatrix}
+    1 \
+    0 \
+    0
+\end{bmatrix}
+$
+Since the geometric multiplicity (1) is strictly less than the algebraic multiplicity (2), there are not enough linearly independent eigenvectors to form a basis for $\mathbb{R}^3$, so $A$ is not diagonalizable.
+\newline
+
+\underline{Exercise 5.2.3.d}
+\newline
+\newline
+$T$ is diagonalizable. Let $\gamma = \{1, x, x^2\}$ be the standard basis for $P_2(\mathbb{R})$. Then the matrix representation $[T]_\gamma^\gamma$ is formed by solving for $T(1)$, $T(x)$, and $T(x^2)$:
+$$[T]_\gamma^\gamma =
+\begin{bmatrix}
+    1 & 0 & 0 \\
+    1 & 1 & 1 \\
+    1 & 1 & 1
+\end{bmatrix}$$After solving $\det([T]_\gamma^\gamma-\lambda I)=0$, we get the eigenvalues of $T$ to be 2, 1, and 0. Since there are three distinct eigenvalues for an operator on a 3-dimensional vector space, $T$ is diagonalizable. The corresponding eigenvectors for 2, 1, and 0 are
+$
+\begin{bmatrix}
+    0 \
+    1 \
+    1
+\end{bmatrix}
+$,
+$
+\begin{bmatrix}
+    1 \
+    -1 \
+    -1
+\end{bmatrix}
+$, and
+$
+\begin{bmatrix}
+    0 \
+    1 \
+    -1
+\end{bmatrix}
+$ respectively. Putting these vectors back into $P_2(\mathbb{R})$, we get an ordered basis $\beta=\{x+x^2, 1-x-x^2, x-x^2\}$. The diagonal matrix $[T]_\beta^\beta$ is formed by the corresponding eigenvalues, so
+\[
+[T]_\beta^\beta =
+\begin{bmatrix}
+    2 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 0
+\end{bmatrix}
+\]
+
+
+\underline{Exercise 5.2.13}
+\newline
+\begin{parts}
+    \part Let $\lambda$ be an eigenvalue of the invertible linear operator $T$, and let $E_\lambda$ be the eigenspace of $T$ corresponding to $\lambda$. Let $E'_{\lambda^{-1}}$ be the eigenspace of $T^{-1}$ corresponding to $\lambda^{-1}$. We want to show $E_\lambda = E'_{\lambda^{-1}}$. If $v \in E_\lambda$, then $v \neq 0$ and $T(v) = \lambda v$. Since $T$ is invertible, $\lambda \neq 0$ and we can apply $T^{-1}$ to both sides $T^{-1}(T(v)) = T^{-1}(\lambda v) \implies v = \lambda T^{-1}(v)$. Dividing by $\lambda$, we get $T^{-1}(v) = \lambda^{-1}v$. Thus, $v \in E'_{\lambda^{-1}}$. Conversely, if $v \in E'_{\lambda^{-1}}$, then $v \neq 0$ and $T^{-1}(v) = \lambda^{-1}v$. Applying $T$ to both sides:$T(T^{-1}(v)) = T(\lambda^{-1}v) \implies v = \lambda^{-1}T(v)$.Multiplying by $\lambda$, we get $T(v) = \lambda v$. Thus, $v \in E_\lambda$.
+    \part $T^{-1}$ is diagonalizable. Suppose $T$ is a diagonalizable linear operator on an $n$-dimensional vector space $V$. By definition, there exists an ordered basis $\beta = \{v_1, v_2, \dots, v_n\}$ for $V$ consisting of eigenvectors of $T$. Let each $v_i$ be an eigenvector corresponding to the eigenvalue $\lambda_i$. As shown in part (a), every eigenvector $v_i$ of $T$ with eigenvalue $\lambda_i$ is also an eigenvector of $T^{-1}$ with eigenvalue $\lambda_i^{-1}$. Since the set $\beta$ is a basis for $V$ and every element in $\beta$ is an eigenvector of $T^{-1}$, $V$ has a basis consisting of eigenvectors of $T^{-1}$. Therefore, $T^{-1}$ is diagonalizable.
+\end{parts}
+
+\end{document}
