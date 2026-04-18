@@ -1,0 +1,222 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Pham \\ Mathematical Theory of Probability}{Homework 9}{Aadhithya Saravanan}
+\runningheader{Mathematical Theory of Probability \\ Homework 9}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\begin{parts}
+    \part For $f(x)$ the integral over its support must equal 1. So,
+    \[\int_{-\infty}^{\infty}f(x)dx=1\]
+    \[\int_{-1}^{1}c(1-x^2)dx=1\]
+    \[c\int_{-1}^{1}(1-x^2)dx=1\]
+    \[c(x-\frac{1}{3}x^3)\Big|_{-1}^1=1\]
+    \[c(1-\frac{1}{3}-(-1+\frac{1}{3}))=1\]
+    \[c(\frac{4}{3})=1\]
+    \[c=\frac{3}{4}\]
+    \part To find the cumulative distribution function of $X$, we need to integrate over the probability density function from $-\infty$ to any $x$. So,
+    \[\int_{-\infty}^{x}f(t)dt\]
+    For $x\le-1$,
+    \[\int_{-\infty}^{x}(0)dt=0\]
+    For $-1<x\le1$,
+    \[\int_{-\infty}^{x}\frac{3}{4}(1-t^2)dt\]
+    \[\int_{-\infty}^{-1}(0)dt+\int_{-1}^{x}\frac{3}{4}(1-t^2)dt\]
+    \[\frac{3}{4}t-\frac{1}{4}t^3\Big|_{-1}^x\]
+    \[\frac{3}{4}x-\frac{1}{4}x^3-(-\frac{3}{4}+\frac{1}{4})\]
+    \[\frac{3}{4}x-\frac{1}{4}x^3+\frac{1}{2}\]
+    For $x>1$,
+    \[\int_{-\infty}^{x}f(t)dt\]
+    \[\int_{-\infty}^{1}f(t)dt+\int_{1}^{x}f(t)dt\]
+    \[1+0\]
+    \[1\]
+    So, $F_X(x)$ is given by
+    \[F_X(x)=
+    \begin{cases}
+        0 & x\le-1\\
+        \frac{3}{4}x-\frac{1}{4}x^3+\frac{1}{2} & -1<x\le1\\
+        1 & x>1
+    \end{cases}\]
+    \newline
+\end{parts}
+
+\underline{Problem 2}
+\newline
+\begin{parts}
+    \part $f$ cannot be a probability density function, as it must have a negative value on its range. $f(x)=c(2x-x^3)=cx(2-x^2)$ has a root at $x=\sqrt{2}$, which is between 0 and $\frac{5}{2}$. For $c\ne0$, regardless of the value of $c$, $f$ will be negative for some values in its domain, so it cannot be a probability density function.
+    \part $f$ cannot be a probability density function, as it must have a negative value on its domain. $f(x)=c(2x-x^2)=cx(2-x)$ has a root at $x=2$, which is between 0 and $\frac{5}{2}$. For $c\ne0$, regardless of the value of $c$, $f$ will be negative for some values in its range, so it cannot be a probability density function.
+    \newline
+\end{parts}
+
+\underline{Problem 3}
+\newline
+\newline
+$X$ is the random variable representing the weekly volume of sales in thousands of gallons of gasoline. We are looking for the capacity $c$ such that $P(X\ge c)=0.01$. So, we can integrate from $c$ to $1$ and set it equal to 0.01. So,
+\[\int_{c}^{1}f(x)dx=0.01\]
+\[\int_{c}^{1}5(1-x)^4dx=0.01\]
+\[-(1-x)^5\Big|_{c}^{1}=0.01\]
+\[-(0)-(-(1-c)^5)=0.01\]
+\[(1-c)^5=0.01\]
+\[1-c=0.01^{1/5}\]
+\[c=1-0.01^{1/5}\approx0.602\]
+
+\underline{Problem 4}
+\newline
+\begin{parts}
+    \part \[E(X)=\int_{-\infty}^{\infty}xf(x)dx\]
+    \[E(X)=\int_{0}^{\infty}x(\frac{1}{4}xe^{-\frac{x}{2}})dx\]
+    \[E(X)=\frac{1}{2}\int_{0}^{\infty}(\frac{1}{2}x^2e^{-\frac{x}{2}})dx\]
+    Let $Y$ be a random variable following an exponential distribution with rate $\frac{1}{2}$. $E(Y^2)=\int_{0}^{\infty}y^2\cdot\frac{1}{2}e^{-\frac{1}{2}y}dy=\frac{2}{(\frac{1}{2})^2}=8$. So,
+    \[E(X)=\frac{1}{2}\int_{0}^{\infty}(\frac{1}{2}x^2e^{-\frac{x}{2}})dx=\frac{1}{2}\cdot\frac{2}{(\frac{1}{2})^2}=4\]
+    \part \[E(X)=\int_{-\infty}^{\infty}xf(x)dx\]
+    \[E(X)=\int_{-1}^{1}xc(1-x^2)dx\]
+    This is an odd function, as $x$ is odd and $c(1-x^2)$ is even, so the integral over its range will be 0. So, $E(X)=0$.
+    \part \[E(X)=\int_{-\infty}^{\infty}xf(x)dx\]
+    \[E(X)=\int_{5}^{\infty}x\frac{5}{x^2}dx\]
+    \[E(X)=\int_{5}^{\infty}\frac{5}{x}dx\]
+    \[E(X)=5\ln(x)\Big|_{5}^{\infty}\]
+    \[E(X)=5(\ln(\infty)-\ln(5))\]
+    \[E(X)=5(\infty-\ln(5))\]
+    \[E(X)=\infty\]
+    \newline
+\end{parts}
+
+\underline{Problem 5}
+\newline
+\newline
+We can solve for $a$ and $b$ using two equations, one from the fact that the integral of the probability density function must equal 1, and one from the fact that the expected value is equal to $\frac{3}{5}$. So,
+\[\int_{-\infty}^{\infty}f(x)dx=1\]
+\[\int_{0}^{1}(a+bx^2)dx=1\]
+\[ax+\frac{1}{3}bx^3\Big|_{0}^{1}=1\]
+\[a+\frac{1}{3}b=1\]
+\[a=1-\frac{1}{3}b\]
+\newline
+\[E(X)=\int_{-\infty}^{\infty}xf(x)dx=\frac{3}{5}\]
+\[E(X)=\int_{0}^{1}x(a+bx^2)dx=\frac{3}{5}\]
+\[\int_{0}^{1}(ax+bx^3)dx=\frac{3}{5}\]
+\[\frac{1}{2}ax^2+\frac{1}{4}bx^4\Big|_{0}^{1}=\frac{3}{5}\]
+\[\frac{1}{2}a+\frac{1}{4}b=\frac{3}{5}\]
+\[\frac{1}{2}(1-\frac{1}{3}b)+\frac{1}{4}b=\frac{3}{5}\]
+\[\frac{1}{2}-\frac{1}{6}b+\frac{1}{4}b=\frac{3}{5}\]
+\[\frac{1}{12}b=\frac{1}{10}\]
+\[b=\frac{6}{5}\]
+\[a=1-\frac{1}{3}\cdot\frac{6}{5}=\frac{3}{5}\]
+So, $a=\frac{3}{5}$ and $b=\frac{6}{5}$.
+\newline
+
+\underline{Problem 6}
+\newline
+\newline
+\[E(X)=\int_{-\infty}^{\infty}xf(x)dx\]
+\[E(X)=\int_{0}^{\infty}x(xe^{-x})dx\]
+\[E(X)=\int_{0}^{\infty}x^2e^{-x}dx\]
+\[E(X)=-x^2e^{-x}\Big|_{0}^{\infty}+\int_{0}^{\infty}2xe^{-x}dx\]
+\[E(X)=0+2(-xe^{-x}\Big|_{0}^{\infty}+\int_{0}^{\infty}e^{-x}dx)\]
+\[E(X)=2(0+(-e^{-x})\Big|_{0}^{\infty})\]
+\[E(X)=2(1)\]
+\[E(X)=2\]
+\newline
+
+\underline{Problem 7}
+\newline
+\begin{parts}
+    \part For every 15-minute interval starting at 7 am, if a passenger arrives in the first 5 minutes of the interval, they will take the train heading for $B$. So, out of the 60 minutes in the hour, 20 minutes will be spent on passengers taking the train heading for $B$. So, the probability that a passenger takes the train heading for $B$ is $\frac{1}{3}$. Therefore, the probability that a passenger takes the train heading for $A$ is $\frac{2}{3}$.
+    \part For every 15-minute interval starting at 7:10 am, if a passenger arrives in the middle 5 minutes of the interval, they will take the train heading for $B$. So, out of the 60 minutes in the hour, 20 minutes will be spent on passengers taking the train heading for $B$. So, the probability that a passenger takes the train heading for $B$ is $\frac{1}{3}$. Therefore, the probability that a passenger takes the train heading for $A$ is $\frac{2}{3}$.
+    \newline
+\end{parts}
+
+\underline{Problem 8}
+\newline
+\newline
+Let $X$ be the random variable representing the location of the point randomly chosen on the line segment. $X$ follows a uniform distribution over the interval $[0,L]$. Let $R$ be the random variable representing the ratio of the smaller segment to the larger segment. We can express $R$ in terms of $X$ as follows:
+\[R = \begin{cases}
+\frac{X}{L-X} & \text{if } X < \frac{L}{2} \\
+\frac{L-X}{X} & \text{if } X \geq \frac{L}{2}
+\end{cases}\]
+We are looking for $P(R\le\frac{1}{4})$. Then,
+\[P(R\le\frac{1}{4}) = P\left(\frac{X}{L-X}\le\frac{1}{4}\text{ and }X<\frac{L}{2}\right)+P\left(\frac{L-X}{X}\le\frac{1}{4}\text{ and }X\ge\frac{L}{2}\right)\]
+\[P(R\le\frac{1}{4}) = P\left(X\le\frac{L}{5}\right)+P\left(X\ge\frac{4L}{5}\right)\]
+\[P(R\le\frac{1}{4}) = \frac{L}{5L}+\frac{L-4L/5}{L}\]
+\[P(R\le\frac{1}{4}) = \frac{1}{5}+\frac{1}{5}\]
+\[P(R\le\frac{1}{4}) = \frac{2}{5}\]
+\newline
+
+\underline{Problem 9}
+\newline
+\newline
+Let $U$ be the random variable representing the location of the bus breaking down. $U$ follows a uniform distribution over the interval $[0,100]$. $X$ and $Y$ are the random variables representing the distance from the bus breaking down to the nearest bus service station in the first and second cases, respectively. We are looking for $E(X)$ and $E(Y)$. $X$ can be expressed in terms of $U$ as follows:
+\[X = \begin{cases}
+U & \text{if } 0<U<25 \\
+50-U & \text{if } 25<U<50 \\
+U-50 & \text{if } 50<U<75 \\
+100-U & \text{if } 75<U<100
+\end{cases}\]
+Then,
+\[E(X) = \int_{0}^{25}u\cdot\frac{1}{100}du+\int_{25}^{50}(50-u)\cdot\frac{1}{100}du+\int_{50}^{75}(u-50)\cdot\frac{1}{100}du+\int_{75}^{100}(100-u)\cdot\frac{1}{100}du\]
+By symmetry, all four integrals will have the same value, so we can just calculate one of them and multiply it by 4. So,
+\[E(X) = \frac{1}{100}\cdot4\cdot\int_{0}^{25}udu\]
+\[E(X) = \frac{1}{100}\cdot4\cdot\frac{25^2}{2}\]
+\[E(X) = \frac{25}{2}\]
+$Y$ can be expressed in terms of $U$ as follows:
+\[Y = \begin{cases}
+25-U & \text{if } 0<U<25 \\
+U-25 & \text{if } 25<U<37.5 \\
+50-U & \text{if } 37.5<U<50 \\
+U-50 & \text{if } 50<U<62.5 \\
+75-U & \text{if } 62.5<U<75 \\
+U-75 & \text{if } 75<U<100
+\end{cases}\]
+Then,
+\[E(Y) = \int_{0}^{25}(25-u)\cdot\frac{1}{100}du+\int_{25}^{37.5}(u-25)\cdot\frac{1}{100}du+\int_{37.5}^{50}(50-u)\cdot\frac{1}{100}du\]
+\[+\int_{50}^{62.5}(u-50)\cdot\frac{1}{100}du+\int_{62.5}^{75}(75-u)\cdot\frac{1}{100}du+\int_{75}^{100}(u-75)\cdot\frac{1}{100}du\]
+By symmetry, the first and last integral are equal and the middle four integrals are equal, so we can just calculate the first and second integral and multiply them by 2 and 4, respectively. So,
+\[E(Y) = \frac{1}{100}\cdot2\cdot\int_{0}^{25}(25-u)du+\frac{1}{100}\cdot4\cdot\int_{25}^{37.5}(u-25)du\]
+\[E(Y) = \frac{1}{100}\cdot2\cdot\frac{25^2}{2}+\frac{1}{100}\cdot4\cdot\frac{(37.5-25)^2}{2}\]
+\[E(Y) = \frac{25}{4}+\frac{1}{100}\cdot4\cdot\frac{12.5^2}{2}\]
+\[E(Y) = \frac{25}{4}+\frac{1}{100}\cdot4\cdot\frac{25^2}{8}\]
+\[E(Y) = \frac{25}{4}+\frac{25}{8}\]
+\[E(Y) = \frac{75}{8}\]
+Since $E(X)=\frac{25}{2}$ and $E(Y)=\frac{75}{8}$, the expected distance to the nearest bus service station is less in the second case, so it is better for the bus company to place the bus service stations at 25, 50, and 75 miles from the starting point.
+\newline
+
+\underline{Problem 10}
+\newline
+\begin{parts}
+    \part Let $X$ be the random variable representing the time it takes for the bus to arrive. $X$ follows a uniform distribution over the interval $[0,30]$. We are looking for $P(X>10)$. So,
+    \[P(X>10) = \int_{10}^{30}\frac{1}{30}dx\]
+    \[P(X>10) = \frac{1}{30}\cdot20\]
+    \[P(X>10) = \frac{2}{3}\]
+    \part We are looking for $P(X>25|X>15)$. So,
+    \[P(X>25|X>15) = \frac{P(X>25\text{ and }X>15)}{P(X>15)}\]
+    \[P(X>25|X>15) = \frac{P(25<X<30)}{P(15<X<30)}\]
+    \[P(X>25|X>15) = \frac{\int_{25}^{30}\frac{1}{30}dx}{\int_{15}^{30}\frac{1}{30}dx}\]
+    \[P(X>25|X>15) = \frac{5}{15}\]
+    \[P(X>25|X>15) = \frac{1}{3}\]
+    \newline
+\end{parts}
+
+\underline{Problem 11}
+\newline
+\newline
+Let $X$ be the random variable representing the location of the fire. $X$ follows a uniform distribution over the interval $[0,A]$. Let $c$ be the location of the fire station. We are looking for $c$ such that $E(|X-c|)$ is minimized. So,
+\[E(|X-c|) = \frac{1}{A}\int_{0}^{A}|x-c|dx\]
+\[E(|X-c|) = \frac{1}{A}\left(\int_{0}^{c}(c-x)dx+\int_{c}^{A}(x-c)dx\right)\]
+\[E(|X-c|) = \frac{1}{A}\left(\frac{1}{2}c^2+\frac{1}{2}(A-c)^2\right)\]
+\[E(|X-c|) = \frac{1}{A}\left(c^2+\frac{1}{2}A^2-Ac\right)\]
+To minimize $E(|X-c|)$, we can take the derivative with respect to $c$ and set it equal to 0. So,
+\[\frac{d}{dc}E(|X-c|) = \frac{1}{A}(2c-A) = 0\]
+\[2c-A=0\]
+\[c=\frac{A}{2}\]
+So, the fire station should be located at the midpoint of the interval to minimize the expected distance from the fire to the fire station.
+\newline
+
+\end{document}
