@@ -1,0 +1,284 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Tahvildar-Zadeh \\ Linear Algebra}{Homework 10}{Aadhithya Saravanan}
+\runningheader{Linear Algebra \\ Homework 10}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{}
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 7.1.2.a}
+\newline
+\newline
+For
+\[
+A=\begin{pmatrix}1 & 1\\-1 & 3\end{pmatrix},
+\]
+the characteristic polynomial is
+\[
+\chi_A(\lambda)=\det(A-\lambda I)
+=(1-\lambda)(3-\lambda)+1
+=(\lambda-2)^2,
+\]
+so $\lambda=2$ with algebraic multiplicity $2$. Compute
+\[
+A-2I=\begin{pmatrix}-1 & 1\\-1 & 1\end{pmatrix}.
+\]
+Then
+\[
+E_2=\ker(A-2I)=\operatorname{span}\left\{\begin{pmatrix}1\\1\end{pmatrix}\right\}.
+\]
+Since $\dim E_2=1<2$, we find a generalized eigenvector. Let
+\[
+v_1=\begin{pmatrix}1\\1\end{pmatrix}, \quad (A-2I)v_2=v_1.
+\]
+Solving gives $-x+y=1$, so take
+\[
+v_2=\begin{pmatrix}0\\1\end{pmatrix}.
+\]
+Thus a basis for the generalized eigenspace is
+\[
+\left\{
+\begin{pmatrix}1\\1\end{pmatrix},
+\begin{pmatrix}0\\1\end{pmatrix}
+\right\}.
+\]
+Now
+\[
+Av_1=2v_1, \quad Av_2=v_1+2v_2,
+\]
+so in the basis $\{v_1,v_2\}$,
+\[
+J=
+\begin{pmatrix}
+2 & 1\\
+0 & 2
+\end{pmatrix}.
+\]
+
+\underline{Exercise 7.1.2.c}
+\newline
+\newline
+For
+\[
+A=\begin{pmatrix}
+11 & -4 & -5\\
+21 & -8 & -11\\
+3 & -1 & 0
+\end{pmatrix},
+\]
+the characteristic polynomial is
+\[
+\chi_A(\lambda)=\det(A-\lambda I)=-(\lambda-1)^3,
+\]
+so $\lambda=1$ with algebraic multiplicity $3$. Compute
+\[
+A-I=\begin{pmatrix}
+10 & -4 & -5\\
+21 & -9 & -11\\
+3 & -1 & -1
+\end{pmatrix}.
+\]
+Row reducing gives
+\[
+\begin{pmatrix}
+1 & 0 & 1\\
+0 & 1 & \tfrac{3}{2}\\
+0 & 0 & 0
+\end{pmatrix},
+\]
+so
+\[
+E_1=\ker(A-I)=\operatorname{span}\left\{
+\begin{pmatrix}-1\\-\tfrac{3}{2}\\1\end{pmatrix}
+\right\}.
+\]
+Since $\dim E_1=1<3$, we build a Jordan chain. Let
+\[
+v_1=\begin{pmatrix}-2\\-3\\2\end{pmatrix}.
+\]
+Solve $(A-I)v_2=v_1$, giving one choice
+\[
+v_2=\begin{pmatrix}1\\1\\0\end{pmatrix}.
+\]
+Then solve $(A-I)v_3=v_2$, giving one choice
+\[
+v_3=\begin{pmatrix}0\\1\\1\end{pmatrix}.
+\]
+Thus a basis for the generalized eigenspace is
+\[
+\left\{
+\begin{pmatrix}-2\\-3\\2\end{pmatrix},
+\begin{pmatrix}1\\1\\0\end{pmatrix},
+\begin{pmatrix}0\\1\\1\end{pmatrix}
+\right\}.
+\]
+Now
+\[
+Av_1=v_1,\quad Av_2=v_1+v_2,\quad Av_3=v_2+v_3,
+\]
+so in the basis $\{v_1,v_2,v_3\}$,
+\[
+J=
+\begin{pmatrix}
+1 & 1 & 0\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{pmatrix}.
+\]
+
+\underline{Exercise 7.1.3.a}
+\newline
+\begin{parts}
+    \part Let $T(f)=2f-f'$ on $P_2(\mathbb{R})$ with basis $\{1,x,x^2\}$. Then
+    \[
+    T(1)=2,\quad T(x)=2x-1,\quad T(x^2)=2x^2-2x,
+    \]
+    so the matrix of $T$ is
+    \[
+    [T]=\begin{pmatrix}
+    2 & -1 & 0\\
+    0 & 2 & -2\\
+    0 & 0 & 2
+    \end{pmatrix}.
+    \]
+    Thus the only eigenvalue is $\lambda=2$ with algebraic multiplicity $3$. Compute
+    \[
+    T-2I:\ f\mapsto -f'.
+    \]
+    Then
+    \[
+    E_2=\ker(T-2I)=\{f: f'=0\}=\operatorname{span}\{1\}.
+    \]
+    Since $\dim E_2=1<3$, build a chain. Let
+    \[
+    v_1=1,\quad (T-2I)v_2=v_1\Rightarrow -v_2'=1\Rightarrow v_2=-x,
+    \]
+    \[
+    (T-2I)v_3=v_2\Rightarrow -v_3'=-x\Rightarrow v_3=\tfrac{x^2}{2}.
+    \]
+    Thus a basis for the generalized eigenspace is
+    \[
+    \{1,-x,\tfrac{x^2}{2}\}.
+    \]
+    Now
+    \[
+    T(v_1)=2v_1,\quad T(v_2)=v_1+2v_2,\quad T(v_3)=v_2+2v_3,
+    \]
+    so
+    \[
+    J=\begin{pmatrix}
+    2 & 1 & 0\\
+    0 & 2 & 1\\
+    0 & 0 & 2
+    \end{pmatrix}.
+    \]
+    \part Let $T(f)=f'$ on $V=\operatorname{span}\{1,t,t^2,e^t,te^t\}$. Then
+    \[
+    T(1)=0,\quad T(t)=1,\quad T(t^2)=2t,\quad T(e^t)=e^t,\quad T(te^t)=e^t+te^t.
+    \]
+    Thus eigenvalues are $\lambda=0,1$.
+
+    For $\lambda=0$:
+    \[
+    E_0=\ker T=\operatorname{span}\{1\}.
+    \]
+    Build a chain:
+    \[
+    v_1=1,\quad Tv_2=v_1\Rightarrow v_2=t,\quad Tv_3=v_2\Rightarrow v_3=\tfrac{t^2}{2}.
+    \]
+    So basis:
+    \[
+    \{1,t,\tfrac{t^2}{2}\}.
+    \]
+
+    For $\lambda=1$:
+    \[
+    (T-I)f=f'-f.
+    \]
+    Then
+    \[
+    E_1=\ker(T-I)=\operatorname{span}\{e^t\}.
+    \]
+    Build a chain:
+    \[
+    v_1=e^t,\quad (T-I)v_2=v_1\Rightarrow v_2=te^t.
+    \]
+    So basis:
+    \[
+    \{e^t,te^t\}.
+    \]
+
+    Combining, a basis of generalized eigenvectors is
+    \[
+    \{1,t,\tfrac{t^2}{2},e^t,te^t\}.
+    \]
+    Now
+    \[
+    T(1)=0,\ T(t)=1,\ T(\tfrac{t^2}{2})=t,\quad T(e^t)=e^t,\ T(te^t)=e^t+te^t,
+    \]
+    so
+    \[
+    J=\begin{pmatrix}
+    0 & 1 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0 & 0\\
+    0 & 0 & 0 & 0 & 0\\
+    0 & 0 & 0 & 1 & 1\\
+    0 & 0 & 0 & 0 & 1
+    \end{pmatrix}.
+    \]
+    \newline
+    \end{parts}
+
+\underline{Exercise 7.2.4.a}
+\newline
+\newline
+From Example 5, $A$ has characteristic polynomial $(\lambda-1)(\lambda-2)^2$, so the eigenvalues are $\lambda=1,2$ with algebraic multiplicities $1$ and $2$. For $\lambda=1$, solving $(A-I)v=0$ gives
+\[
+E_1=\operatorname{span}\left\{\begin{pmatrix}1\\2\\1\end{pmatrix}\right\}.
+\]
+For $\lambda=2$, solving $(A-2I)v=0$ gives
+\[
+E_2=\operatorname{span}\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}\right\}.
+\]
+Since $\dim E_2=1<2$, we find a generalized eigenvector $v_2$ such that $(A-2I)v_2=v_1$, where
+\[
+v_1=\begin{pmatrix}1\\1\\0\end{pmatrix}.
+\]
+Solving gives one choice
+\[
+v_2=\begin{pmatrix}0\\1\\1\end{pmatrix}.
+\]
+Thus a basis of generalized eigenvectors is
+\[
+\left\{
+\begin{pmatrix}1\\2\\1\end{pmatrix},
+\begin{pmatrix}1\\1\\0\end{pmatrix},
+\begin{pmatrix}0\\1\\1\end{pmatrix}
+\right\}.
+\]
+Ordering the basis as above, the Jordan form is
+\[
+J=\begin{pmatrix}
+1&0&0\\
+0&2&1\\
+0&0&2
+\end{pmatrix}.
+\]
+Taking these vectors as columns gives
+\[
+Q=\begin{pmatrix}
+1&1&0\\
+2&1&1\\
+1&0&1
+\end{pmatrix},
+\]
+so $J=Q^{-1}AQ$.
+
+\end{document}
