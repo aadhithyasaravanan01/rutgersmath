@@ -1,0 +1,152 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Pham \\ Mathematical Theory of Probability}{Homework 10}{Aadhithya Saravanan}
+\runningheader{Mathematical Theory of Probability \\ Homework 10}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\newline
+For any given year, the probability that it will rain more than 50 inches is given by $P(X\ge50)$, where $X$ is a normal distribution with $\mu=40$ and $\sigma^2=4$. After standardizing, we have
+\[P(Z\ge\frac{50-40}{\sqrt{4}})\]
+\[=P(Z\ge5)\]
+\[=\int_{5}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^2}dz\]
+\[\approx2.867\cdot10^{-7}\]
+So, let $p=2.867\cdot10^{-7}$. The probability that it will take more than 10 years before a year with more than 50 inches of rain occurs is given by
+\[P(Y>10)=(1-p)^{10}\]
+\[\approx0.9999997\]
+This assumes the amount of rain in each year is independent of the amount of rain in any other year and the distribution of the amount of rain in each year is the same.
+\newline
+
+\underline{Problem 2}
+\newline
+\newline
+$X$ is a normal distribution with $\mu=5$ with $P(X>9)=0.2$ and we are looking for $\text{Var}(X)=\sigma^2$. After standardizing, we have
+\[P(Z>\frac{9-5}{\sigma})=0.2\]
+\[P(Z>\frac{4}{\sigma})=0.2\]
+Then, we have
+\[\int_{\frac{4}{\sigma}}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^2}dz=0.2\]
+From this, we can use a graph to find that $\sigma\approx4.753$, so $\text{Var}(X)\approx22.59$.
+\newline
+
+\underline{Problem 3}
+\newline
+\begin{parts}
+    \part The number of rolls that land as a 6 is a binomial distribution with $n=1000$ and $p=\frac{1}{6}$. Then, $\mu=np=1000\cdot\frac{1}{6}=166.67$ and $\sigma=\sqrt{np(1-p)}=\sqrt{1000\cdot\frac{1}{6}\cdot\frac{5}{6}}\approx11.785$. Using these values, we can use a normal distribution to approximate the probability that the number of times that 6 lands between 150 and 200 times. We can use $P(149.5<X<200.5)$, where $X$ is a normal distribution with $\mu=166.67$ and $\sigma\approx11.785$. After standardizing, we have
+    \[P(\frac{149.5-166.67}{11.785}<Z<\frac{200.5-166.67}{11.785})\]
+    \[=P(-1.43<Z<2.87)\]
+    \[=\int_{-1.43}^{2.87}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^2}dz\]
+    \[\approx0.9216\]
+    So, the probability that the number of times that 6 lands between 150 and 200 times is approximately 0.9216.
+    \part We are looking for $P(X<150)$, where $X$ is a binomial distribution with $n=800$ and $p=\frac{1}{5}$. This is because we know that exactly 200 rolls land as a 6, so there are only 800 rolls left that can land as a 5. We can use a normal distribution to approximate this probability. So, we have
+    \[\sum_{i=0}^{149}P(X=i)\]
+    \[\sum_{i=0}^{149}\binom{800}{i}\left(\frac{1}{5}\right)^i\left(\frac{4}{5}\right)^{800-i}\]
+    \[\approx0.18\]
+    \newline
+\end{parts}
+
+\underline{Problem 4}
+\newline
+\begin{parts}
+    \part The probability that we make a false conclusion with a fair coin is given by $P(X\ge525)$, where $X$ is a binomial distribution with $n=1000$ and $p=\frac{1}{2}$. We can use a normal distribution to approximate this probability. We are looking for $P(z\ge\frac{525-\mu}{\sigma})$, where $Z$ is a standard normal distribution. We have $\mu=np=1000\cdot\frac{1}{2}=500$ and $\sigma=\sqrt{np(1-p)}=\sqrt{1000\cdot\frac{1}{2}\cdot\frac{1}{2}}=15.81$. Then, we have
+    \[P(z\ge\frac{525-500}{15.81})\]
+    \[=P(z\ge1.58)\]
+    \[=\int_{1.58}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^2}dz\]
+    \[\approx0.0571\]
+    So, the probability that we make a false conclusion with a fair coin is approximately 0.0571.
+    \part The probability that we make a false conclusion with a biased coin is given by $P(X<525)$, where $X$ is a binomial distribution with $n=1000$ and $p=0.55$. We can use a normal distribution to approximate this probability. We are looking for $P(z<\frac{525-\mu}{\sigma})$, where $Z$ is a standard normal distribution. We have $\mu=np=1000\cdot0.55=550$ and $\sigma=\sqrt{np(1-p)}=\sqrt{1000\cdot0.55\cdot0.45}=15.73$. Then, we have
+    \[P(z<\frac{525-550}{15.73})\]
+    \[=P(z<-1.59)\]
+    \[=\int_{-\infty}^{-1.59}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^2}dz\]
+    \[\approx0.0560\]
+    So, the probability that we make a false conclusion with a biased coin is approximately 0.0560.
+    \newline
+\end{parts}
+
+\underline{Problem 5}
+\newline
+\newline
+We are looking to  minimize $E|X-c|$, where $X$ is an exponential distribution with rate $\lambda$ representing the location of the fire and $c$ is the location of the fire station. We can write $E|X-c|$ as
+\[\int_{0}^{\infty}|x-c|\lambda e^{-\lambda x}dx\]
+We can break this integral into two parts:
+\[\int_{0}^{c}(c-x)\lambda e^{-\lambda x}dx+\int_{c}^{\infty}(x-c)\lambda e^{-\lambda x}dx\]
+After evaluating this integral, we have
+\[E|X-c|=c+\frac{2}{\lambda}e^{-\lambda c}-\frac{1}{\lambda}\]
+To minimize this, we can take the derivative with respect to $c$ and set it equal to 0:
+\[\frac{d}{dc}E|X-c|=1-2e^{-\lambda c}=0\]
+\[e^{-\lambda c}=\frac{1}{2}\]
+\[-\lambda c=\ln\left(\frac{1}{2}\right)\]
+\[c=\frac{\ln(2)}{\lambda}\]
+So, the location of the fire station that minimizes $E|X-c|$ is $\frac{\ln(2)}{\lambda}$.
+\newline
+
+\underline{Problem 6}
+\newline
+\begin{parts}
+    \part Let $X \sim \text{Exp}(\lambda = \tfrac{1}{2})$. Then,
+    \[P(X > 2) = e^{-\lambda \cdot 2} = e^{-1}.\]
+    \part Using the memoryless property of the exponential distribution,
+    \[P(X \ge 10 \mid X > 9) = P(X \ge 1) = e^{-\lambda \cdot 1} = e^{-1/2}\]
+    \newline
+\end{parts}
+
+\underline{Problem 7}
+\newline
+\newline
+We first work with the the cdf and then differentiate to find the pdf. If $U$ is a uniform distribution on the interval $[0,1]$ and $Y=-\ln(U)$, then we have
+\[P(Y\le y)\]
+\[=P(-\ln(U)\le y)\]
+\[=P(U\ge e^{-y})\]
+\[=1-P(U<e^{-y})\]
+\[=1-e^{-y}\]
+for $y\ge0$. Then, we can differentiate to find the pdf:
+\[f(y)=\frac{d}{dy}P(Y\le y)\]
+\[=e^{-y}\]
+for $y\ge0$. So, $Y$ is an exponential distribution with rate $\lambda=1$.
+\newline
+
+\underline{Problem 8}
+\newline
+\begin{parts}
+    \part $X$ is a uniform distribution on the interval $(-1,1)$ and we are looking for $P(|X|>\frac{1}{2})$. We can define $Y=|X|$ and we can see the support of $Y$ is $[0,1)$. We can see that $\frac{x+1}{2}$ maps to $Y$ and we can use this to find the cdf of $Y$:
+    \[P(Y<y)\]
+    \[=P(|X|<y)\]
+    \[=P(-y<X<y)\]
+    \[=\frac{y-(-y)}{1-(-1)}\]
+    \[=y\]
+    Then, we can differentiate to find the pdf of $Y$:
+    \[f(y)=\frac{d}{dy}P(Y<y)\]
+    \[=1\]
+    for $y\in[0,1)$. So, $Y$ is a uniform distribution on the interval $[0,1)$. Then, we have
+    \[P(|X|>\frac{1}{2})\]
+    \[=P(Y>\frac{1}{2})\]
+    \[=\frac{1}{2}\]
+    \part We are looking for the pdf of $Y$, which we found in part (a) to be $f(y)=1$ for $y\in[0,1)$.
+    \newline
+\end{parts}
+
+\underline{Problem 9}
+\newline
+\newline
+$X$ is uniformly distributed on the interval $(0,1)$ and we are looking for the pdf of $Y=e^X$. The support of $Y$ is $(1,e)$. We can find the cdf of $Y$ as follows:
+\[P(Y\le y)\]
+\[=P(e^X\le y)\]
+\[=P(X\le \ln(y))\]
+\[=\ln(y)\]
+for $y\in(1,e)$. Then, we can differentiate to find the pdf of $Y$:
+\[f(y)=\frac{d}{dy}P(Y\le y)\]
+\[=\frac{1}{y}\]
+for $y\in(1,e)$. So, the pdf of $Y$ is $f(y)=\frac{1}{y}$ for $y\in(1,e)$.
+\newline
+
+
+\end{document}
