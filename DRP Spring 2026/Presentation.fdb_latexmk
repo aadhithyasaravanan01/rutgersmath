@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1776974094.63852 "/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Presentation.tex" "Presentation.pdf" "Presentation" 1776974095.31808 0
-  "/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Presentation.tex" 1776974094.48397 2823 e0d99ae6ff1db0cf7b7f60e76848fb78 ""
+["pdflatex"] 1777483582.53574 "/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Presentation.tex" "Presentation.pdf" "Presentation" 1777483583.65516 0
+  "/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Presentation.tex" 1777483582.34252 5062 e17d67f5cb726e22702ddc29510f7e09 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -21,6 +21,8 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm" 1336178347 1696 aaa5bbd1f47f001247d42218ce371101 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm" 1336178347 1676 fb6c6a335484692abff897d6e8965829 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1248133631 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb" 1248133631 24393 3b7eb51a67a0a62aec5849271bdb9c2e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb" 1248133631 24420 52dbb8e8aa0069a1b987309557f8d303 ""
@@ -28,6 +30,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb" 1248133631 25168 33771b85f45c82138dd7745db7092d1c ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -194,10 +197,11 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1770139220 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Presentation.aux" 1776974095.27809 2469 39f29d80d2e14563f9b9dcec4aa0b102 "pdflatex"
-  "Presentation.nav" 1776974095.27867 1515 f3d73c9753cb922354508e7143d9138c "pdflatex"
-  "Presentation.out" 1776974095.27853 411 c183b660ab4f2f7bbb0db3de67abcd14 "pdflatex"
-  "Presentation.tex" 1776974094.48397 2823 e0d99ae6ff1db0cf7b7f60e76848fb78 ""
+  "PlanarSystem.png" 1777483272.98244 349257 0c51d911b1395aba66faed331bdc17cd ""
+  "Presentation.aux" 1777483583.61199 2865 5e73d1f3fe8eaa7b0e52afa76e27d2f9 "pdflatex"
+  "Presentation.nav" 1777483583.6127 1801 862b24c4a11d05d15f3786f01ccf3362 "pdflatex"
+  "Presentation.out" 1777483583.61255 411 c183b660ab4f2f7bbb0db3de67abcd14 "pdflatex"
+  "Presentation.tex" 1777483582.34252 5062 e17d67f5cb726e22702ddc29510f7e09 ""
   (generated)
   "Presentation.aux"
   "Presentation.log"
