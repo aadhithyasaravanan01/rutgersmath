@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  29 APR 2026 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  2 MAY 2026 15:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Presentation.tex"
-(/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Presentation.tex
+**"/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Spring2026DRPPresentation.tex"
+(/Users/aadhithyasaravanan/Documents/GitHub/rutgersmath/DRP Spring 2026/Spring2026DRPPresentation.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
@@ -546,8 +546,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count345
 \l__pdf_internal_box=\box77
-) (./Presentation.aux)
-\openout1 = `Presentation.aux'.
+) (./Spring2026DRPPresentation.aux)
+\openout1 = `Spring2026DRPPresentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -622,9 +622,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 10.
- (./Presentation.out) (./Presentation.out)
+ (./Spring2026DRPPresentation.out) (./Spring2026DRPPresentation.out)
 \@outlinefile=\write5
-\openout5 = `Presentation.out'.
+\openout5 = `Spring2026DRPPresentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 10.
@@ -687,7 +687,7 @@ Dictionary: translator-months-dictionary, Language: English
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./Presentation.nav)
+) (./Spring2026DRPPresentation.nav)
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -720,10 +720,21 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [5
 
 ]
+<Source.png, id=199, 602.25pt x 604.2575pt>
+File: Source.png Graphic file (type png)
+<use Source.png>
+Package pdftex.def Info: Source.png  used on input line 77.
+(pdftex.def)             Requested size: 130.83328pt x 131.2682pt.
+<Sink.png, id=201, 602.25pt x 604.2575pt>
+File: Sink.png Graphic file (type png)
+<use Sink.png>
+Package pdftex.def Info: Sink.png  used on input line 77.
+(pdftex.def)             Requested size: 130.83328pt x 131.2682pt.
+
 
 [6
 
-]
+ <./Source.png> <./Sink.png>]
 
 [7
 
@@ -736,54 +747,92 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [9
 
 ]
-<PlanarSystem.png, id=317, 3392.675pt x 1521.685pt>
-File: PlanarSystem.png Graphic file (type png)
-<use PlanarSystem.png>
-Package pdftex.def Info: PlanarSystem.png  used on input line 146.
-(pdftex.def)             Requested size: 261.66658pt x 117.34889pt.
-
 
 [10
 
- <./PlanarSystem.png>]
+]
 
 [11
 
 ]
+<HarmonicOscillator.png, id=406, 3392.675pt x 1521.685pt>
+File: HarmonicOscillator.png Graphic file (type png)
+<use HarmonicOscillator.png>
+Package pdftex.def Info: HarmonicOscillator.png  used on input line 160.
+(pdftex.def)             Requested size: 261.66658pt x 117.34889pt.
+
 
 [12
 
+ <./HarmonicOscillator.png>]
+
+[13
+
+]
+
+[14
+
+]
+<Saddle.png, id=532, 3392.675pt x 1521.685pt>
+File: Saddle.png Graphic file (type png)
+<use Saddle.png>
+Package pdftex.def Info: Saddle.png  used on input line 200.
+(pdftex.def)             Requested size: 203.51895pt x 91.27394pt.
+
+
+[15
+
+ <./Saddle.png>]
+
+[16
+
+]
+
+[17
+
+]
+
+[18
+
+]
+
+[19
+
+]
+
+[20
+
 ]
 \tf@nav=\write6
-\openout6 = `Presentation.nav'.
+\openout6 = `Spring2026DRPPresentation.nav'.
 
 \tf@toc=\write7
-\openout7 = `Presentation.toc'.
+\openout7 = `Spring2026DRPPresentation.toc'.
 
 \tf@snm=\write8
-\openout8 = `Presentation.snm'.
+\openout8 = `Spring2026DRPPresentation.snm'.
 
- (./Presentation.aux)
+ (./Spring2026DRPPresentation.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: C183B660AB4F2F7BBB0DB3DE67ABCD14;411.
+Package rerunfilecheck Info: File `Spring2026DRPPresentation.out' has not changed.
+(rerunfilecheck)             Checksum: 8622BB95F34C32E7E94063FFBA726457;471.
  ) 
 Here is how much of TeX's memory you used:
- 21784 strings out of 473190
- 424044 string characters out of 5715801
- 790979 words of memory out of 5000000
- 44562 multiletter control sequences out of 15000+600000
+ 21879 strings out of 473190
+ 426885 string characters out of 5715801
+ 792166 words of memory out of 5000000
+ 44641 multiletter control sequences out of 15000+600000
  565587 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,480b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,493b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Presentation.pdf (12 pages, 258447 bytes).
+Output written on Spring2026DRPPresentation.pdf (20 pages, 529851 bytes).
 PDF statistics:
- 469 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
- 28 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 800 PDF objects out of 1000 (max. 8388607)
+ 682 compressed objects within 7 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 417 words of extra memory for PDF output out of 10000 (max. 10000000)
 

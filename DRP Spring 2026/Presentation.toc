@@ -1,3 +1,0 @@
-\beamer@sectionintoc {1}{Introduction}{1}{0}{1}
-\beamer@sectionintoc {2}{Systems of Differential Equations}{6}{0}{2}
-\beamer@sectionintoc {3}{Section 4}{11}{0}{3}
