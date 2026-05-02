@@ -1,0 +1,440 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Tahvildar-Zadeh \\ Linear Algebra}{Homework 12}{Aadhithya Saravanan}
+\runningheader{Linear Algebra \\ Homework 12}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{}{\thepage}{}
+
+\printanswers
+
+\begin{document}
+
+\underline{Exercise 6.3.1}
+\newline
+\begin{parts}
+    \part True, by Theorem 6.9.
+    \part False. Linear operators output vectors in $V$, while $\langle x,y\rangle$ is a scalar in $F$.
+    \part False. Let $\beta=\{(1,0),(1,1)\}$ be an ordered basis for $V=\mathbb{R}^2$. Let $T=L_A$, where $A=
+    \begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{bmatrix}$. Then, $T^*=L_{A^*}$, where $A^*=\begin{bmatrix}
+        0 & 0 \\
+        1 & 0
+    \end{bmatrix}$. So, $[T^*]_\beta=\begin{bmatrix}
+        -1 & -1 \\
+        1 & 1
+    \end{bmatrix}$. But, $([T]_\beta)^*=\begin{bmatrix}
+        0 & 0 \\
+        1 & 0
+    \end{bmatrix}$. So, $[T^*]_\beta\ne([T]_\beta)^*$.
+    \part True, by Theorem 6.9.
+    \part False, $(aT+bU)^*=\overline{a}T^*+\overline{b}U^*$ by Theorem 6.11.
+    \part True, by the corollary to Theorem 6.10.
+    \part True, by Theorem 6.11.
+    \newline
+\end{parts}
+
+\underline{Exercise 6.3.2}
+\newline
+\begin{parts}
+    \part Let $y=g(e_1)e_1+g(e_2)e_2+g(e_3)e_3=(1,-2,4)$. Then, for all $x=(x_1,x_2,x_3)\in \mathbb{R}^3$, $\langle x,y\rangle=x_1-2x_2+4x_3=g(x)$.
+    \part We want $g(x)=\langle x,y\rangle$ for all $x\in \mathbb{C}^2$. $x=(x_1,x_2)$, where $x_1,x_2\in \mathbb{C}$, so $g(x)=x_1-2x_2$. Let $y=(y_1,y_2)$. Then, $\langle x,y\rangle=x_1\overline{y_1}+x_2\overline{y_2}$. So, we want $x_1-2x_2=x_1\overline{y_1}+x_2\overline{y_2}$ for all $x_1,x_2\in \mathbb{C}$. So, $\overline{y_1}=1$ and $\overline{y_2}=-2$. Thus, $y=(1,-2)$.
+    \part We want $g(f)=\langle f,h\rangle$ for all $f\in P_2(\mathbb{R})$. Let $f(x)=a_0+a_1x+a_2x^2$. Then, $g(f)=f(0)+f'(1)=a_0+a_1+2a_2$. Let $h(x)=b_0+b_1x+b_2x^2$. Then, $\langle f,h\rangle=\int_{0}^{1}f(t)h(t)dt$. So, we want $a_0+a_1+2a_2=\int_{0}^{1}(a_0+a_1t+a_2t^2)(b_0+b_1t+b_2t^2)dt$ for all $a_0,a_1,a_2\in \mathbb{R}$.
+    \[\int_{0}^{1}(a_0+a_1t+a_2t^2)(b_0+b_1t+b_2t^2)dt\]
+    \[=\int_{0}^{1}a_0b_0+t(a_1b_0+a_0b_1)+t^2(a_2b_0+a_1b_1+a_0b_2)+t^3(a_1b_2+a_2b_1)+t^4(a_2b_2)dt\]
+    \[=a_0b_0+\frac{1}{2}(a_1b_0+a_0b_1)+\frac{1}{3}(a_2b_0+a_1b_1+a_0b_2)+\frac{1}{4}(a_1b_2+a_2b_1)+\frac{1}{5}(a_2b_2)\]
+    \[=a_0\left(b_0+\frac{b_1}{2}+\frac{b_2}{3}\right)+a_1\left(\frac{b_0}{2}+\frac{b_1}{3}+\frac{b_2}{4}\right)+a_2\left(\frac{b_0}{3}+\frac{b_1}{4}+\frac{b_2}{5}\right)\]
+    So, we have the system of equations:
+    \[1=b_0+\frac{b_1}{2}+\frac{b_2}{3}\]
+    \[1=\frac{b_0}{2}+\frac{b_1}{3}+\frac{b_2}{4}\]
+    \[2=\frac{b_0}{3}+\frac{b_1}{4}+\frac{b_2}{5}\]
+    This gives us $b_0=33$, $b_1=-204$, and $b_2=210$. Thus, $h(x)=33-204x+210x^2$.
+\end{parts}
+
+\underline{Exercise 6.3.8}
+\newline
+\newline
+If $T$ is an invertible linear operator on $V$, there exists $T^{-1}$ such that $T^{-1}T=I$ and  $TT^{-1}=I$. Taking the adjoint of the first equation, we have $(T^{-1}T)^*=I^*$. By the corollary to Theorem 6.11, this is equal to $T^*(T^{-1})^*=I$. So, $(T^{-1})^*$ is the right inverse of $T^*$. Now, taking the adjoint of the second equation, we have $(TT^{-1})^*=I^*$. By the corollary to Theorem 6.11, this is equal to $(T^{-1})^*T^*=I$. So, $(T^{-1})^*$ is the left inverse of $T^*$. Therefore, $T^*$ is invertible. Also, the inverse of $T^*$, which is $(T^*)^{-1}$, is equal to $(T^{-1})^*$. So, $(T^*)^{-1}=(T^{-1})^*$.
+\newline
+
+\underline{Exercise 6.3.10}
+\newline
+\newline
+First, assume $\|T(z)\|=\|z\|$ for all $z\in V$. We want to prove that $\langle T(x),T(y)\rangle=\langle x,y\rangle$ for all $x,y\in V$. First, let $z=x+y$. Then,
+\[\|T(x+y)\|=\|x+y\|\]
+\[\sqrt{\langle T(x+y),T(x+y)\rangle}=\sqrt{\langle x+y,x+y\rangle}\]
+\[\langle T(x+y),T(x+y)\rangle=\langle x+y,x+y\rangle\]
+\[\langle T(x)+T(y),T(x)+T(y)\rangle=\langle x+y,x+y\rangle\]
+\[\langle T(x),T(x)\rangle+\langle T(x),T(y)\rangle+\langle T(y),T(x)\rangle+\langle T(y),T(y)\rangle=\langle x,x\rangle+\langle x,y\rangle+\langle y,x\rangle+\langle y,y\rangle\]
+Since $\|T(z)\|=\|z\|$ for all $z\in V$, we have $\langle T(x),T(x)\rangle=\langle x,x\rangle$ and $\langle T(y),T(y)\rangle=\langle y,y\rangle$. After cancelling those terms on both sides, we have
+\[\langle T(x),T(y)\rangle+\langle T(y),T(x)\rangle=\langle x,y\rangle+\langle y,x\rangle\]
+If Let this be equation (1). Now, let $z=x-iy$. Then,
+\[\|T(x-iy)\|=\|x-iy\|\]
+\[\sqrt{\langle T(x-iy),T(x-iy)\rangle}=\sqrt{\langle x-iy,x-iy\rangle}\]
+\[\langle T(x-iy),T(x-iy)\rangle=\langle x-iy,x-iy\rangle\]
+\[\langle T(x)-iT(y),T(x)-iT(y)\rangle=\langle x-iy,x-iy\rangle\]
+\[\langle T(x),T(x)\rangle+i\langle T(x),T(y)\rangle-i\langle T(y),T(x)\rangle+\langle T(y),T(y)\rangle=\langle x,x\rangle+i\langle x,y\rangle-i\langle y,x\rangle+\langle y,y\rangle\]
+Since $\|T(z)\|=\|z\|$ for all $z\in V$, we have $\langle T(x),T(x)\rangle=\langle x,x\rangle$ and $\langle T(y),T(y)\rangle=\langle y,y\rangle$. After cancelling those terms on both sides, we have
+\[i\langle T(x),T(y)\rangle-i\langle T(y),T(x)\rangle=i\langle x,y\rangle-i\langle y,x\rangle\]
+\[\langle T(x),T(y)\rangle-\langle T(y),T(x)\rangle=\langle x,y\rangle-\langle y,x\rangle\]
+Let this be equation (2). Adding equations (1) and (2), we have
+\[2\langle T(x),T(y)\rangle=2\langle x,y\rangle\]
+\[\langle T(x),T(y)\rangle=\langle x,y\rangle\]
+Hence, the forward direction is proven. This is for the case that $F$ is the field of complex numbers. If $F$ is the field of real numbers, the proof would only require equation (1), because $\langle T(x),T(y)\rangle=\langle T(y),T(x)\rangle$. Now, assume $\langle T(x),T(y)\rangle=\langle x,y\rangle$ for all $x,y\in V$. We want to prove that $\|T(z)\|=\|z\|$ for all $z\in V$. Let $x=y=z$. Then,
+\[\langle T(z),T(z)\rangle=\langle z,z\rangle\]
+By Theorem 6.2, $\|x\|\ge0$ for all $x\in V$. So, $\sqrt{\langle T(z),T(z)\rangle}\ge0$ and $\sqrt{\langle z,z\rangle}\ge0$. So, we can take the square root of both sides. So, we have, for all $z\in V$,
+\[\sqrt{\langle T(z),T(z)\rangle}=\sqrt{\langle z,z\rangle}\]
+\[\|T(z)\|=\|z\|\]
+Hence, the backward direction is proven.
+\newline
+
+\underline{Exercise 6.3.12}
+\newline
+\newline
+Let $x\in R(T^*)^\perp$. Then, $\langle x,y\rangle=0$ for all $y\in R(T^*)$. For every $z\in V$, $T^*(z)\in R(T^*)$, so $\langle x,T^*(z)\rangle=0$ for all $z\in V$. By definition of adjoint, this is equivalent to $\langle T(x),z\rangle=0$ for all $z\in V$. Let $z=T(x)$. Then, $\langle T(x),T(x)\rangle=0$, so $T(x)=0$ and $x\in N(T)$. Therefore, $R(T^*)^\perp\subseteq N(T)$.
+\newline
+\newline
+Let $x\in N(T)$. Then, $T(x)=0$. Choose any $y\in R(T^*)$. Then, there exists some $z$ such that $T^*(z)=y$. Now, $\langle x,y\rangle=\langle x,T^*(y)\rangle=\langle T(x),y\rangle=\langle0,y\rangle=0$. So, for all $y\in R(T^*)$, $\langle x,y\rangle=0$. Then, $x\in R(T^*)^\perp$. So, $N(T)\subseteq R(T^*)^\perp$. Therefore, $R(T^*)^\perp=N(T)$.
+\newline
+
+\underline{Exercise 6.4.1}
+\newline
+\begin{parts}
+    \part True. Let $T$ be self-adjoint. Then, we have $T=T^*$. So, $TT^*=T^*T$. Therefore, $T$ is normal.
+    \part False. Let $T$ be the linear operator on $\mathbb{R}^2$ such that $T(v)=Av$ for all $v\in \mathbb{R}^2$, where $A=
+    \begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{bmatrix}$. Then, an eigenvector of $T$ is $
+    \begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix}$. $T^*$ satisfies $T^*(v)=A^tv$ for all $v\in \mathbb{R}^2$, since $A$ is a real matrix. $T^*\left(
+    \begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix}
+    \right)=
+    \begin{bmatrix}
+        0 \\
+        1
+    \end{bmatrix}$. Since $
+    \begin{bmatrix}
+        0 \\
+        1
+    \end{bmatrix}$ is not a multiple of $
+    \begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix}$, $
+    \begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix}$ is not an eigenvector of $T^*$. So, operators and their adjoints do not have the same eigenvectors.
+    \part False. Let $\beta=\{(1,0),(1,1)\}$ be an ordered basis for $\mathbb{R}^2$. $T(v)=Av$ for all $v\in\mathbb{R}^2$, where $A=
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{bmatrix}$. $[T]_\beta=
+    \begin{bmatrix}
+        1 & -1 \\
+        0 & 2
+    \end{bmatrix}$.
+    \[TT^*=
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{bmatrix}=
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 4
+    \end{bmatrix}=
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{bmatrix}=
+    T^*T\]
+    \[[T]_\beta[T]_\beta^*=\begin{bmatrix}
+        1 & -1 \\
+        0 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 0 \\
+        -1 & 2
+    \end{bmatrix}=
+    \begin{bmatrix}
+        2 & -2 \\
+        -2 & 4
+    \end{bmatrix}\ne
+    \begin{bmatrix}
+        1 & -1 \\
+        -1 & 5
+    \end{bmatrix}=
+    \begin{bmatrix}
+        1 & 0 \\
+        -1 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & -1 \\
+        0 & 2
+    \end{bmatrix}=
+    [T]_\beta^*[T]_\beta\]
+    So, $T$ is normal, while $[T]_\beta$ is not normal.
+    \part Let $\beta$ be the standard orthonormal basis for $F^n$, the finite-dimensional inner product space that $L_A$ acts on. Since $L_A(x)=Ax$, $[L_A]_\beta=A$. By the definition of normal linear operators and normal matrices and Theorem 6.10, $L_A$ is normal if and only if $[L_A]_\beta$ is normal. Since $[L_A]_\beta=A$, $L_A$ is normal if and only if $A$ is normal.
+    \part True. Let $\lambda$ be an eigenvalue of $T$. So, $T(x)=\lambda x$ for some $x\ne0$. If $T$ is self-adjoint, then by part (a), $T$ is normal. By Theorem 6.15.c, if $T(x)=\lambda x$, $T^*(x)=\overline{\lambda}x$. So,
+    \[\lambda x=T(x)=T^*(x)=\overline{\lambda}x\]
+    Then, $\lambda=\overline{\lambda}$. So, the complex part of $\lambda$ is 0 and $\lambda$ is real. Therefore, the eigenvalues of a self-adjoint operator must all be real.
+    \part Let $I$ be the identity operator. By Theorem 6.11.e, $I=I^*$. So, $I$ is self-adjoint.
+    \newline
+    \newline
+    Let $O$ be the zero operator and let $x,y$ be any vectors in the inner product space.
+    \[\langle x,O(y)\rangle=\langle x,0\rangle=0=\langle 0,y\rangle=\langle O(x),y\rangle=\langle x,O^*(y)\rangle\]
+    Since $x$ was chosen arbitrarily, this is true for all $x$. Then, by Theorem 6.1.e, $O(y)=O^*(y)$. Since $y$ was chosen arbitrarily, this is true for all $y$. So, $O=O^*$. So, $O$ is self-adjoint.
+    \part False. Let $T$ be the linear operator over $\mathbb{R}$ such that $T(v)=Av$ for all $v\in \mathbb{R}^2$, where $A=
+    \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{bmatrix}$. This matrix has no eigenvalues in $\mathbb{R}$, so it is not diagonalizable. However, $T$ is normal, as shown:
+    \[TT^*=
+    \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & 1 \\
+        -1 & 0
+    \end{bmatrix}=
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}=
+    \begin{bmatrix}
+        0 & 1 \\
+        -1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{bmatrix}=
+    T^*T
+    \]
+    \part True. Let $T$ be a self-adjoint linear operator on the inner product space $V$. By Theorem 6.17, there exists an orthonormal basis $\beta$ for $V$ consisting of eigenvectors of $T$. Therefore, by Theorem 5.1, $T$ is diagonalizable. Since $T$ was an arbitrarily chosen self-adjoint linear operator, every self-adjoint operator is diagonalizable.
+    \newline
+\end{parts}
+
+\underline{Exercise 6.4.2}
+\newline
+\begin{parts}
+    \part Let $\beta$ be the standard ordered basis for $\mathbb{R}^2$. $[T]_\beta=
+    \begin{bmatrix}
+        2 & -2 \\
+        -2 & 5
+    \end{bmatrix}$. Since all of the entries of $[T]_\beta$ are real and the matrix is symmetric, it is self-adjoint. Therefore, $T$ is also self-adjoint. By 6.4.1.a, $T$ is also normal. The eigenvalues of $T$ are 1 and 6. The corresponding eigenvector for $\lambda=1$ is $(2,1)$, and the corresponding eigenvector for $\lambda=6$ is $(1,-2)$. The eigenvectors are already orthogonal, so we just have to normalize them to find an orthonormal basis for $\mathbb{R}^2$. After normalizing, $\gamma=\left(\left(\frac{2}{\sqrt{5}},\frac{1}{\sqrt{5}}\right),\left(\frac{1}{\sqrt{5}},-\frac{2}{\sqrt{5}}\right)\right)$ is an orthonormal basis of eigenvectors of $T$ for $\mathbb{R}^2$ with corresponding eigenvalues 1 and 6.
+    \part Let $\beta$ be the standard ordered basis for $\mathbb{R}^3$. $[T]_\beta=
+    \begin{bmatrix}
+        -1 & 1 & 0 \\
+        0 & 5 & 0 \\
+        4 & -2 & 5
+    \end{bmatrix}$. Since all of the entries of $[T]_\beta$ are real, $[T]_\beta^*=[T]_\beta^t=
+    \begin{bmatrix}
+        -1 & 0 & 4 \\
+        1 & 5 & -2 \\
+        0 & 0 & 5
+    \end{bmatrix}$. After computing $[T]_\beta[T]_\beta^*$ and $[T]_\beta^*[T]_\beta$, we have the following:
+    \[[T]_\beta[T]_\beta^*=
+    \begin{bmatrix}
+        2 & 5 & -6 \\
+        5 & 25 & -10 \\
+        -6 & -10 & 45
+    \end{bmatrix}
+    ,
+    [T]_\beta^*[T]_\beta=
+    \begin{bmatrix}
+        17 & -9 & 20 \\
+        -9 & 30 & -10 \\
+        20 & -10 & 25
+    \end{bmatrix}
+    \]
+    So, $[T]_\beta$ is not normal. It is also not self-adjoint, as every self-adjoint matrix is normal. So, $T$ is not normal or self-adjoint. By Theorem 6.17, there is no orthonormal basis $\beta$ for $\mathbb{R}^3$ consisting of eigenvectors of $T$.
+    \part Let $\beta$ be the standard ordered basis for $\mathbb{C}^2$. $[T]_\beta=
+    \begin{bmatrix}
+        2 & i \\
+        1 & 2
+    \end{bmatrix}$. Also, $[T]_\beta^*=
+    \begin{bmatrix}
+        2 & 1 \\
+        -i & 2
+    \end{bmatrix}$. Since these matrices are not equal, $[T]_\beta$ is not self-adjoint. After computing $[T]_\beta[T]_\beta^*$ and $[T]_\beta^*[T]_\beta$, we have the following:
+    \[[T]_\beta[T]_\beta^*=
+    \begin{bmatrix}
+        5 & 2+2i \\
+        2-2i & 5
+    \end{bmatrix}=[T]_\beta^*[T]_\beta\]
+    So, $[T]_\beta$ is normal. Therefore, $T$ is normal, but not self-adjoint. The eigenvalues of $T$ are $\frac{4-\sqrt{2}(i+1)}{2}$ and $\frac{4+\sqrt{2}(i+1)}{2}$. The corresponding eigenvector for $\lambda=\frac{4-\sqrt{2}(i+1)}{2}$ is $(\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}i,-1)$, and the corresponding eigenvector for $\lambda=\frac{4+\sqrt{2}(i+1)}{2}$ is $(\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}i,1)$. Scaling the eigenvectors by $\frac{1}{\sqrt{2}}$, we get $(\frac{1}{2}+\frac{1}{2}i,-\frac{\sqrt{2}}{2})$ and $(\frac{1}{2}+\frac{1}{2}i,\frac{\sqrt{2}}{2})$. These form an orthonormal basis for $\mathbb{C}^2$ consisting of the eigenvectors of $T$.
+    \part Let $\beta$ be the standard ordered basis for $P_2(\mathbb{R})$. $[T]_\beta=
+    \begin{bmatrix}
+    0 & 1 & 0 \\
+    0 & 0 & 2 \\
+    0 & 0 & 0
+    \end{bmatrix}$.
+    However, since $\beta=\{1,x,x^2\}$ is not an orthonormal basis under the inner product $\langle f,g\rangle=\int_0^1 f(t)g(t)dt$, we cannot use $[T]_\beta^t$ to find $T^*$.
+    To show that $T$ is not self-adjoint, let $f(x)=1$ and $g(x)=x$. Then,
+    \[\langle T(1),x\rangle=\langle 0,x\rangle=0\]
+    but
+    \[\langle 1,T(x)\rangle=\langle 1,1\rangle=\int_0^1 1dt=1\]
+    So, $T$ is not self-adjoint. Now, we show that $T$ is not normal. For $f(x)=a_0+a_1x+a_2x^2$,
+    \[\langle T(f),1\rangle=\int_0^1 f'(t)dt=f(1)-f(0)=a_1+a_2\]
+    Also,
+    \[\langle f,-6+12x\rangle=\int_0^1(a_0+a_1t+a_2t^2)(-6+12t)dt\]
+    \[=-6a_0-3a_1-2a_2+6a_0+4a_1+3a_2\]
+    \[=a_1+a_2\]
+    Thus, $T^*(1)=-6+12x$. Then,
+    \[\|T(1)\|=0\]
+    but
+    \[\|T^*(1)\|^2=\int_0^1(-6+12t)^2dt=12\]
+    so $\|T(1)\|\ne\|T^*(1)\|$. By Theorem 6.15.a, $T$ is not normal. Therefore, $T$ is neither normal nor self-adjoint. The only eigenvalue is $0$, and the eigenspace is
+    \[E_0=\operatorname{span}\{1\}\]
+    Since this does not form a basis for $P_2(\mathbb{R})$, there does not exist an orthonormal basis of eigenvectors of $T$ for $P_2(\mathbb{R})$.
+    \part Let $\beta$ be the standard ordered basis for $M_{2\times2}(\mathbb{R})$. $[T]_\beta=
+    \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1
+    \end{bmatrix}$. Since all of the entries of $[T]_\beta$ are real and the matrix is symmetric, it is self-adjoint. Therefore, $T$ is also self-adjoint. By 6.4.1.a, $T$ is also normal. The eigenvalues of $T$ are $-1$ and 1. The corresponding eigenvector for $\lambda=-1$ is $(0,1,-1,0)$, and the corresponding eigenvectors for $\lambda=1$ are $(1,0,0,0),(0,0,0,1),(0,1,1,0)$. The eigenvectors are already orthogonal, so we just have to normalize them to find an orthonormal basis for $M_{2\times2}(\mathbb{R})$. After normalizing and converting back into matrix form, $\gamma=\left(
+    \begin{bmatrix}
+        0 & \frac{1}{\sqrt{2}} \\
+        -\frac{1}{\sqrt{2}} & 0
+    \end{bmatrix},
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+    \end{bmatrix},
+    \begin{bmatrix}
+        0 & 0 \\
+        0 & 1
+    \end{bmatrix},
+    \begin{bmatrix}
+        0 & \frac{1}{\sqrt{2}} \\
+        \frac{1}{\sqrt{2}} & 0
+    \end{bmatrix}
+    \right)$ is an orthonormal basis of eigenvectors of $T$ for $M_{2\times2}(\mathbb{R})$ with corresponding eigenvalues $-1,1,1,1$.
+    \part Let $\beta$ be the standard ordered basis for $M_{2\times2}(\mathbb{R})$. $[T]_\beta=
+    \begin{bmatrix}
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1 \\
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0
+    \end{bmatrix}$. Since all of the entries of $[T]_\beta$ are real and the matrix is symmetric, it is self-adjoint. Therefore, $T$ is also self-adjoint. By 6.4.1.a, $T$ is also normal. The eigenvalues of $T$ are $-1$ and 1. The corresponding eigenvectors for $\lambda=-1$ are $(1,0,-1,0)$ and $(0,1,0,-1)$, and the corresponding eigenvectors for $\lambda=1$ are $(1,0,1,0)$ and $(0,1,0,1)$. The eigenvectors are already orthogonal, so we just have to normalize them to find an orthonormal basis for $M_{2\times2}(\mathbb{R})$. After normalizing and converting back into matrix form, $\gamma=\left(
+    \begin{bmatrix}
+        \frac{1}{\sqrt{2}} & 0 \\
+        -\frac{1}{\sqrt{2}} & 0
+    \end{bmatrix},
+    \begin{bmatrix}
+        0 & \frac{1}{\sqrt{2}} \\
+        0 & -\frac{1}{\sqrt{2}}
+    \end{bmatrix},
+    \begin{bmatrix}
+        \frac{1}{\sqrt{2}} & 0 \\
+        \frac{1}{\sqrt{2}} & 0
+    \end{bmatrix},
+    \begin{bmatrix}
+        0 & \frac{1}{\sqrt{2}} \\
+        0 & \frac{1}{\sqrt{2}}
+    \end{bmatrix}
+    \right)$ is an orthonormal basis of eigenvectors of $T$ for $M_{2\times2}(\mathbb{R})$ with corresponding eigenvalues $-1,-1,1,1$.
+    \newline
+\end{parts}
+
+\underline{Exercise 6.4.4}
+\newline
+\newline
+First, we prove the forward direction. Assume $TU$ is self-adjoint. We want to show that $TU=UT$. Since $TU$ is self-adjoint, $TU=(TU)^*$. By the corollary to Theorem 6.11, $(TU)^*=U^*T^*$. Since $T$ and $U$ are self-adjoint, $T=T^*$ and $U=U^*$. So, $U^*T^*=UT$. Therefore, $TU=UT$.
+\newline
+\newline
+Now, we prove the backward direction. Assume $TU=UT$. We want to show that $TU$ is self-adjoint. Since $T$ and $U$ are self-adjoint, $T=T^*$ and $U=U^*$. So, $TU=UT=U^*T^*$. By the corollary to Theorem 6.11, $U^*T^*=(TU)^*$. So, $TU=(TU)^*$. Therefore, $TU$ is self-adjoint.
+\newline
+
+\underline{Exercise 6.4.11}
+\newline
+\begin{parts}
+    \part Since $T$ is self-adjoint, $T=T^*$.
+    \[\langle T(x),x\rangle=\langle x,T^*(x)\rangle=\langle x,T(x)\rangle\]
+    By definition of inner products,
+    \[\langle T(x),x\rangle=\overline{\langle x,T(x)\rangle}\]
+    So, $\langle x,T(x)\rangle=\overline{\langle x,T(x)\rangle}$. Therefore, $\langle x,T(x)\rangle$ has no imaginary component. So, $\langle T(x),x\rangle$ is real for all $x\in V$.
+    \part Assume $\langle T(x),x\rangle=0$ for all $x\in V$. We want to prove that $T=T_0$. Let $x,y\in V$. Replacing $x$ with $x+y$, we have
+    \[\langle T(x+y),x+y\rangle=0\]
+    Since $T$ is linear,
+    \[\langle T(x)+T(y),x+y\rangle=0\]
+    Expanding,
+    \[\langle T(x),x\rangle+\langle T(x),y\rangle+\langle T(y),x\rangle+\langle T(y),y\rangle=0\]
+    Since $\langle T(x),x\rangle=0$ and $\langle T(y),y\rangle=0$, we get
+    \[\langle T(x),y\rangle+\langle T(y),x\rangle=0\]
+    Let this be equation (1). Now, replacing $x$ with $x+iy$, we have
+    \[\langle T(x+iy),x+iy\rangle=0\]
+    Since $T$ is linear,
+    \[\langle T(x)+iT(y),x+iy\rangle=0\]
+    Expanding,
+    \[\langle T(x),x\rangle-i\langle T(x),y\rangle+i\langle T(y),x\rangle+\langle T(y),y\rangle=0\]
+    Since $\langle T(x),x\rangle=0$ and $\langle T(y),y\rangle=0$, we get
+    \[-i\langle T(x),y\rangle+i\langle T(y),x\rangle=0\]
+    Dividing by $i$,
+    \[-\langle T(x),y\rangle+\langle T(y),x\rangle=0\]
+    Let this be equation (2). Adding equations (1) and (2), we get
+    \[2\langle T(y),x\rangle=0\]
+    So,
+    \[\langle T(y),x\rangle=0\]
+    Since $x$ and $y$ were arbitrary, $\langle T(x),y\rangle=0$ for all $x,y\in V$. Now, take $y=T(x)$. Then,
+    \[\langle T(x),T(x)\rangle=0\]
+    Thus, $T(x)=0$ for all $x\in V$. Therefore, $T=T_0$.
+    \part Assume $\langle T(x),x\rangle$ is real for all $x\in V$. We want to prove that $T$ is self-adjoint. Let $S=T-T^*$. Then,
+    \[\langle S(x),x\rangle=\langle (T-T^*)(x),x\rangle\]
+    \[=\langle T(x),x\rangle-\langle T^*(x),x\rangle\]
+    Since $\langle T^*(x),x\rangle=\langle x,T(x)\rangle$, we have
+    \[\langle S(x),x\rangle=\langle T(x),x\rangle-\langle x,T(x)\rangle\]
+    By conjugate symmetry,
+    \[\langle x,T(x)\rangle=\overline{\langle T(x),x\rangle}\]
+    Since $\langle T(x),x\rangle$ is real,
+    \[\langle T(x),x\rangle=\overline{\langle T(x),x\rangle}\]
+    Therefore,
+    \[\langle S(x),x\rangle=0\]
+    for all $x\in V$. By part (b), $S=T_0$. So,
+    \[T-T^*=T_0\]
+    Hence,
+    \[T=T^*\]
+    Therefore, $T$ is self-adjoint.
+    \newline
+\end{parts}
+
+\underline{Exercise 6.4.14}
+\newline
+\newline
+Since $T$ is self-adjoint, by Theorem 6.17, there exists an orthonormal basis of $V$ consisting of eigenvectors of $T$. So,$V=E_{\lambda_1}\oplus E_{\lambda_2}\oplus \cdots \oplus E_{\lambda_k}$ where $E_{\lambda_i}$ are the eigenspaces of $T$ corresponding to the distinct eigenvalues $\lambda_1,\dots,\lambda_k$. Let $W=E_\lambda$ be one eigenspace of $T$. We first show that $W$ is $U$-invariant. Let $w\in W$. Then,
+\[T(w)=\lambda w\]
+Since $UT=TU$, we have
+\[T(U(w))=U(T(w))=U(\lambda w)=\lambda U(w)\]
+Thus, $U(w)\in E_\lambda=W$. So, $W$ is $U$-invariant.
+Now consider the restriction of $U$ to $W$, denoted $U_W$. Since $W$ is $U$-invariant, $U_W:W\to W$ is a linear operator on $W$. Also, $U_W$ is self-adjoint on $W$, since for all $x,y\in W$,
+\[\langle U_W(x),y\rangle=\langle U(x),y\rangle=\langle x,U(y)\rangle=\langle x,U_W(y)\rangle\]
+Since $W$ is a finite-dimensional real inner product space and $U_W$ is self-adjoint, by Theorem 6.17, $W$ has an orthonormal basis consisting of eigenvectors of $U_W$.
+Every vector in $W=E_\lambda$ is also an eigenvector of $T$ with eigenvalue $\lambda$. Therefore, this orthonormal basis of $W$ consists of vectors that are eigenvectors of both $T$ and $U$.
+Repeating this process for each eigenspace $E_{\lambda_1},E_{\lambda_2},\dots,E_{\lambda_k}$, we obtain an orthonormal basis for each eigenspace consisting of common eigenvectors of $T$ and $U$.
+Since $T$ is self-adjoint, eigenspaces corresponding to distinct eigenvalues are orthogonal. Therefore, the union of these orthonormal bases is an orthonormal basis for $V$ consisting of vectors that are eigenvectors of both $T$ and $U$.
+\newline
+
+
+\end{document}
