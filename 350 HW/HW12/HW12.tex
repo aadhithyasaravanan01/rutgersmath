@@ -378,45 +378,22 @@ Now, we prove the backward direction. Assume $TU=UT$. We want to show that $TU$ 
     So, $\langle x,T(x)\rangle=\overline{\langle x,T(x)\rangle}$. Therefore, $\langle x,T(x)\rangle$ has no imaginary component. So, $\langle T(x),x\rangle$ is real for all $x\in V$.
     \part Assume $\langle T(x),x\rangle=0$ for all $x\in V$. We want to prove that $T=T_0$. Let $x,y\in V$. Replacing $x$ with $x+y$, we have
     \[\langle T(x+y),x+y\rangle=0\]
-    Since $T$ is linear,
     \[\langle T(x)+T(y),x+y\rangle=0\]
-    Expanding,
     \[\langle T(x),x\rangle+\langle T(x),y\rangle+\langle T(y),x\rangle+\langle T(y),y\rangle=0\]
     Since $\langle T(x),x\rangle=0$ and $\langle T(y),y\rangle=0$, we get
     \[\langle T(x),y\rangle+\langle T(y),x\rangle=0\]
-    Let this be equation (1). Now, replacing $x$ with $x+iy$, we have
-    \[\langle T(x+iy),x+iy\rangle=0\]
-    Since $T$ is linear,
-    \[\langle T(x)+iT(y),x+iy\rangle=0\]
-    Expanding,
-    \[\langle T(x),x\rangle-i\langle T(x),y\rangle+i\langle T(y),x\rangle+\langle T(y),y\rangle=0\]
+    Let this be equation (1). Now, replacing $x$ with $ix+y$, we have
+    \[\langle T(ix+y),ix+y\rangle=0\]
+    \[\langle iT(x)+T(y),ix+y\rangle=0\]
+    \[\langle T(x),x\rangle+i\langle T(x),y\rangle-i\langle T(y),x\rangle+\langle T(y),y\rangle=0\]
     Since $\langle T(x),x\rangle=0$ and $\langle T(y),y\rangle=0$, we get
-    \[-i\langle T(x),y\rangle+i\langle T(y),x\rangle=0\]
+    \[i\langle T(x),y\rangle-i\langle T(y),x\rangle=0\]
     Dividing by $i$,
-    \[-\langle T(x),y\rangle+\langle T(y),x\rangle=0\]
-    Let this be equation (2). Adding equations (1) and (2), we get
-    \[2\langle T(y),x\rangle=0\]
-    So,
-    \[\langle T(y),x\rangle=0\]
-    Since $x$ and $y$ were arbitrary, $\langle T(x),y\rangle=0$ for all $x,y\in V$. Now, take $y=T(x)$. Then,
+    \[\langle T(x),y\rangle-\langle T(y),x\rangle=0\]
+    Let this be equation (2). Adding equations (1) and (2) and dividing by 2, we get$\langle T(y),x\rangle=0$. Since $x$ and $y$ were arbitrary, $\langle T(x),y\rangle=0$ for all $x,y\in V$. Now, take $y=T(x)$. Then,
     \[\langle T(x),T(x)\rangle=0\]
     Thus, $T(x)=0$ for all $x\in V$. Therefore, $T=T_0$.
-    \part Assume $\langle T(x),x\rangle$ is real for all $x\in V$. We want to prove that $T$ is self-adjoint. Let $S=T-T^*$. Then,
-    \[\langle S(x),x\rangle=\langle (T-T^*)(x),x\rangle\]
-    \[=\langle T(x),x\rangle-\langle T^*(x),x\rangle\]
-    Since $\langle T^*(x),x\rangle=\langle x,T(x)\rangle$, we have
-    \[\langle S(x),x\rangle=\langle T(x),x\rangle-\langle x,T(x)\rangle\]
-    By conjugate symmetry,
-    \[\langle x,T(x)\rangle=\overline{\langle T(x),x\rangle}\]
-    Since $\langle T(x),x\rangle$ is real,
-    \[\langle T(x),x\rangle=\overline{\langle T(x),x\rangle}\]
-    Therefore,
-    \[\langle S(x),x\rangle=0\]
-    for all $x\in V$. By part (b), $S=T_0$. So,
-    \[T-T^*=T_0\]
-    Hence,
-    \[T=T^*\]
-    Therefore, $T$ is self-adjoint.
+    \part Assume $\langle T(x),x\rangle$ is real for all $x\in V$. We want to prove that $T$ is self-adjoint. Let $S=T-T^*$. Then, $\langle S(x),x\rangle=\langle (T-T^*)(x),x\rangle=\langle T(x),x\rangle-\langle T^*(x),x\rangle$. Since $\langle T^*(x),x\rangle=\langle x,T(x)\rangle$, we have $\langle S(x),x\rangle=\langle T(x),x\rangle-\langle x,T(x)\rangle$. By definition of inner products, $\langle x,T(x)\rangle=\overline{\langle T(x),x\rangle}$. Since $\langle T(x),x\rangle$ is real, $\langle T(x),x\rangle=\overline{\langle T(x),x\rangle}$. Therefore, $\langle S(x),x\rangle=0$ for all $x\in V$. By part (b), $S=T_0$. So, $T-T^*=T_0$. Hence, $T=T^*$. Therefore, $T$ is self-adjoint.
     \newline
 \end{parts}
 
