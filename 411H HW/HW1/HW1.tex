@@ -1,0 +1,142 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Komlos \\ Mathematical Analysis I}{Homework 1}{Aadhithya Saravanan}
+\runningheader{Mathematical Analysis I \\ Homework 1}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 6}
+\newline
+\newline
+We will prove that every finite set in a Hausdorff space is closed. Let $X$ be a Hausdorff space and $U$ be a finite set within $X$. If $U=\emptyset$, then $U$ is closed, since $X\setminus\emptyset=X$ is open. Otherwise, since $U$ is finite, it can be written as the finite union of singleton sets $\{u_i\}$. So,
+\[
+U=\bigcup_{i=1}^{n}\{u_i\}.
+\]
+If we prove that every singleton set $\{u_i\}$ is closed, then $U$ is closed, because $U$ will be the union of finitely many closed sets, which is closed by Theorem 3. Consider any $\{u_i\}$.
+\newline
+\newline
+We can prove that $\{u_i\}$ is closed if we show that its complement, $X\setminus\{u_i\}$, is open. Let $y\in X\setminus\{u_i\}$ be chosen arbitrarily. Since $y\notin\{u_i\}$, $y\neq u_i$. By the Hausdorff property, there exist open sets $V$ and $W$ such that $y\in V$ and $u_i\in W$ with $V\cap W=\emptyset$. Since $u_i\in W$ and $V\cap W=\emptyset$, $u_i\notin V$. So, $V\subseteq X\setminus\{u_i\}$. Therefore, there exists an open neighborhood $V$ of $y$ such that $V\subseteq X\setminus\{u_i\}$. Since $y$ was chosen arbitrarily from $X\setminus\{u_i\}$, this can be done for all $y\in X\setminus\{u_i\}$. So, since every point in $X\setminus\{u_i\}$ has an open neighborhood contained in $X\setminus\{u_i\}$, $X\setminus\{u_i\}$ is open.
+\newline
+\newline
+Therefore, $\{u_i\}$ is closed. Since this can be done for every $\{u_i\}$, every singleton set in $X$ is closed. So, any finite set in $X$ is also closed, as it is the union of finitely many closed singleton sets.
+\newline
+
+\underline{Exercise 8}
+\newline
+\begin{parts}
+    \part Let $p,q,r\in X$. First, we need $\bar{d}(p,q)>0$ for $p\neq q$ and $\bar{d}(p,p)=0$. The first case is $p\neq q$. Then, $d(p,q)>0$ since $d$ is a metric. Since $d(p,q)>0$ and $1>0$, $\min\{d(p,q),1\}>0$, so $\bar{d}(p,q)>0$. If $p=q$, then $d(p,q)=0<1$, so
+    \[
+        \bar{d}(p,q)=\min\{d(p,q),1\}=d(p,q)=0.
+    \]
+    Hence, $\bar{d}(p,q)>0$ for $p\neq q$ and $\bar{d}(p,p)=0$.
+    \newline
+    \newline
+    Next, we need $\bar{d}(p,q)=\bar{d}(q,p)$. Since $d$ is a metric on $X$, $d(p,q)=d(q,p)$. So,
+    \[
+        \bar{d}(p,q)=\min\{d(p,q),1\}=\min\{d(q,p),1\}=\bar{d}(q,p).
+    \]
+    Hence, $\bar{d}$ is symmetric.
+    \newline
+    \newline
+    Finally, we need $\bar{d}(p,q)\leq\bar{d}(p,r)+\bar{d}(r,q)$. We know $d(p,q)\leq d(p,r)+d(r,q)$. Note that $0\leq\bar{d}(p,q)\leq 1$ for all $p,q\in X$, since $d(p,q)\geq 0$.
+    \newline
+    \newline
+    The first case is that at least one of $\bar{d}(p,r)=1$ or $\bar{d}(r,q)=1$ holds. Without loss of generality, let $\bar{d}(p,r)=1$. Since $\bar{d}(r,q)\geq 0$, $\bar{d}(p,r)+\bar{d}(r,q)\geq 1$. However, $\bar{d}(p,q)=\min\{d(p,q),1\}\leq 1$. Hence,
+    \[
+        \bar{d}(p,q)\leq 1\leq\bar{d}(p,r)+\bar{d}(r,q).
+    \]
+    The second case is $\bar{d}(p,r)<1$ and $\bar{d}(r,q)<1$. Since each minimum is less than $1$, it is not equal to $1$, so $\bar{d}(p,r)=d(p,r)$ and $\bar{d}(r,q)=d(r,q)$. Then,
+    \[
+        \bar{d}(p,q)=\min\{d(p,q),1\}\leq d(p,q)\leq d(p,r)+d(r,q)=\bar{d}(p,r)+\bar{d}(r,q).
+    \]
+    Since $\bar{d}\leq 1$, these two cases cover all possibilities. Hence, the Triangle Inequality holds for $\bar{d}$.
+    \newline
+    \newline
+    Therefore, $\bar{d}$ is a metric on $X$.
+    \part Let $\tau_1$ be the topology of $X$ induced by $d$ and $\tau_2$ be the topology of $X$ induced by $\bar{d}$.
+    \newline
+    \newline
+    First, we show $\tau_1\subseteq\tau_2$. Choose $x$ in an arbitrary $U\in\tau_1$. Then, there exists $r>0$ such that $B_d(x,r)\subseteq U$. Choose $R=\min\{r,1\}$. Let $y\in B_{\bar{d}}(x,R)$. Then, $\bar{d}(x,y)<R\leq 1$. Since $\bar{d}(x,y)=\min\{d(x,y),1\}$ and $\bar{d}(x,y)<1$, $\bar{d}(x,y)=d(x,y)$. Then, $d(x,y)<R\leq r$, so $y\in B_d(x,r)$. Since $y$ was chosen arbitrarily from $B_{\bar{d}}(x,R)$,
+    \[
+        B_{\bar{d}}(x,R)\subseteq B_d(x,r)\subseteq U,
+    \]
+    and $B_{\bar{d}}(x,R)\in\tau_2$ since open balls are open. Since $x$ was chosen from $U$ arbitrarily, this can be done for all elements in $U$. So,
+    \[
+        U=\bigcup_{x\in U}B_{\bar{d}}(x,R_x),
+    \]
+    where $R_x$ is chosen for each $x\in U$, since each ball is contained in $U$ and each $x\in U$ lies in its own ball. Since $U$ is a union of open sets from $\tau_2$, $U\in\tau_2$. Therefore, since $U$ was arbitrarily chosen from $\tau_1$, $\tau_1\subseteq\tau_2$.
+    \newline
+    \newline
+    Next, we show $\tau_2\subseteq\tau_1$. Choose $x$ in an arbitrary $V\in\tau_2$. Then, there exists $r>0$ such that $B_{\bar{d}}(x,r)\subseteq V$. Let $y\in B_d(x,r)$. Then, $d(x,y)<r$. Since $\bar{d}(x,y)=\min\{d(x,y),1\}\leq d(x,y)$, $\bar{d}(x,y)<r$. So, $y\in B_{\bar{d}}(x,r)$. Since $y$ was chosen arbitrarily from $B_d(x,r)$,
+    \[
+        B_d(x,r)\subseteq B_{\bar{d}}(x,r)\subseteq V,
+    \]
+    and $B_d(x,r)\in\tau_1$ since open balls are open. Since $x$ was chosen from $V$ arbitrarily, this can be done for all elements in $V$. So,
+    \[
+        V=\bigcup_{x\in V}B_d(x,r_x),
+    \]
+    where $r_x$ is chosen for each $x\in V$, since each ball is contained in $V$ and each $x\in V$ lies in its own ball. Since $V$ is a union of open sets from $\tau_1$, $V\in\tau_1$. Therefore, since $V$ was arbitrarily chosen from $\tau_2$, $\tau_2\subseteq\tau_1$.
+    \newline
+    \newline
+    Hence, by double inclusion, $\tau_1=\tau_2$, so $d$ and $\bar{d}$ induce the same topology on $X$.
+    \newline
+\end{parts}
+
+\underline{Exercise 9}
+\newline
+\begin{parts}
+    \part Let $X$ be a topological space and $A\subseteq X$. Throughout, a neighborhood of a point means an open set containing that point. A point $x\in X$ is a boundary point of $A$ if every neighborhood of $x$ contains a point in $A$ and a point in $X\setminus A$.
+    \newline
+    \newline
+    First, we will prove that $A$ contains none of its boundary points, given that $A$ is open. Let $x\in A$. Since $A$ is open and $x\in A$, $A$ itself is a neighborhood of $x$, and $A$ contains no points in $X\setminus A$. So, not every neighborhood of $x$ contains a point in $X\setminus A$, and $x$ is not a boundary point of $A$. Since $x$ was chosen arbitrarily from $A$, $A$ contains none of its boundary points.
+    \newline
+    \newline
+    Now, we will prove that $A$ is open, given that $A$ contains none of its boundary points. Let $x\in A$. Since $A$ contains none of its boundary points, $x$ is not a boundary point of $A$. Then, there exists a neighborhood $N_x$ of $x$ that contains no points in $A$ or contains no points in $X\setminus A$. Since $x\in N_x$ and $x\in A$, $N_x$ contains a point in $A$. So, $N_x$ contains no points in $X\setminus A$, so $N_x\subseteq A$. Since $x$ was chosen arbitrarily from $A$, this can be done for all points in $A$. So,
+    \[
+        A=\bigcup_{x\in A}N_x,
+    \]
+    since each $N_x$ is contained in $A$ and each $x\in A$ lies in its own $N_x$. Since $A$ is a union of open sets, $A$ is open.
+    \newline
+    \newline
+    Hence, $A$ is open if and only if it contains none of its boundary points.
+    \part First, we will prove that $A$ contains all of its boundary points, given that $A$ is closed. Assume for the sake of contradiction that $A$ does not contain all of its boundary points. Let $x\notin A$ be a boundary point of $A$. Since $A$ is closed, $X\setminus A$ is open. Since $x\in X\setminus A$, $X\setminus A$ is a neighborhood of $x$. Since $x$ is a boundary point of $A$, every neighborhood of $x$ contains a point in $A$, so $X\setminus A$ contains a point in $A$. This is a contradiction, so $A$ contains all of its boundary points.
+    \newline
+    \newline
+    Now, we will prove that $A$ is closed, given that $A$ contains all of its boundary points. Since $A$ is closed if and only if $X\setminus A$ is open, we will prove that $X\setminus A$ is open instead. Let $x\in X\setminus A$. Since $x\notin A$ and $A$ contains all of its boundary points, $x$ is not a boundary point of $A$. Then, there exists a neighborhood $N_x$ of $x$ that contains no points in $A$ or contains no points in $X\setminus A$. Since $x\in N_x$ and $x\in X\setminus A$, $N_x$ contains a point in $X\setminus A$. So, $N_x$ contains no points in $A$, so $N_x\subseteq X\setminus A$. Since $x$ was chosen arbitrarily from $X\setminus A$, this can be done for all points in $X\setminus A$. So,
+    \[
+        X\setminus A=\bigcup_{x\in X\setminus A}N_x,
+    \]
+    since each $N_x$ is contained in $X\setminus A$ and each $x\in X\setminus A$ lies in its own $N_x$. Since $X\setminus A$ is a union of open sets, $X\setminus A$ is open, so $A$ is closed.
+    \newline
+    \newline
+    Hence, $A$ is closed if and only if it contains all of its boundary points.
+    \part First, we will prove that $A$ is neither open nor closed, given that $A$ contains some of its boundary points, but not all of them. Since $A$ contains some of its boundary points, it does not contain none of them. So, by the contrapositive of part (a), $A$ is not open. Since $A$ does not contain all of its boundary points, by the contrapositive of part (b), $A$ is not closed. So, $A$ is neither open nor closed.
+    \newline
+    \newline
+    Now, we will prove that $A$ contains some of its boundary points, but not all of them, given that $A$ is neither open nor closed. Since $A$ is not open, by the contrapositive of part (a), $A$ contains at least one of its boundary points. Since $A$ is not closed, by the contrapositive of part (b), $A$ does not contain all of its boundary points. So, $A$ contains some of its boundary points, but not all of them.
+    \newline
+    \newline
+    Therefore, $A$ is neither open nor closed if and only if it contains some of its boundary points, but not all of them.
+    \newline
+\end{parts}
+
+\underline{Exercise 10}
+\newline
+\newline
+First, we will prove that $A$ has an empty boundary, given that $A$ is clopen. Since $A$ is open, by Exercise 9(a), $A$ contains none of its boundary points. Since $A$ is closed, by Exercise 9(b), $A$ contains all of its boundary points. Suppose $x$ is a boundary point of $A$. Then, $x\in A$ since $A$ contains all of its boundary points, and $x\notin A$ since $A$ contains none of its boundary points. This is a contradiction, so $A$ has no boundary points. So, the boundary of $A$ is empty.
+\newline
+\newline
+Now, we will prove that $A$ is clopen, given that $A$ has an empty boundary. Since the boundary of $A$ is empty, $A$ contains none of its boundary points, so $A$ is open by Exercise 9(a). Since the boundary of $A$ is empty, $A$ vacuously contains all of its boundary points, so $A$ is closed by Exercise 9(b). So, $A$ is clopen.
+\newline
+\newline
+Therefore, $A$ is clopen if and only if it has an empty boundary.
+
+\end{document}
