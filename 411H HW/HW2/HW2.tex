@@ -1,0 +1,118 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Komlos \\ Mathematical Analysis I}{Homework 2}{Aadhithya Saravanan}
+\runningheader{Mathematical Analysis I \\ Homework 2}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\newline
+Let $p$ be a limit point of $A\subseteq X$. Since $p$ is a limit point of $A$, every neighborhood of $p$ contains a point of $A$ other than $p$. For each $n\in\mathbb{N}$, let $B_{1/n}(p)$ be the open ball of radius $\frac{1}{n}$ around $p$. Since each $B_{1/n}(p)$ is a neighborhood of $p$, it contains a point of $A$ other than $p$. Choose any point of $A\cap B_{1/n}(p)$ other than $p$ and let that be $x_n$. Since each $x_n\in A$, $(x_n)\subseteq A$.
+\newline
+\newline
+This sequence $(x_n)$ converges to $p$. To show this, we must prove that for all $\varepsilon>0$, there exists $N\in\mathbb{N}$ such that for all $n\geq N$, $d(x_n,p)<\varepsilon$. Let $\varepsilon>0$ be arbitrary. Choose $N\in\mathbb{N}$ such that $\frac{1}{N}<\varepsilon$, which is possible by the Archimedean Property. Then, for all $n\geq N$, $x_n\in B_{1/n}(p)$, so
+\[
+    d(x_n,p)<\frac{1}{n}\leq\frac{1}{N}<\varepsilon.
+\]
+Since $\varepsilon$ was chosen arbitrarily, $x_n\to p$. Therefore, there exists a sequence $(x_n)\subseteq A$ such that $x_n\to p$.
+\newline
+
+\underline{Problem 2}
+\newline
+\newline
+Let $(x_n)\subseteq X$ converge to $p\in X$, and let $(y_k)$ be a subsequence of $(x_n)$. Then, there exist natural numbers $n_1<n_2<n_3<\cdots$ such that $y_k=x_{n_k}$ for each $k\in\mathbb{N}$.
+\newline
+\newline
+First, we will show that $n_k\geq k$ for all $k\in\mathbb{N}$ by induction. Since $n_1\in\mathbb{N}$, $n_1\geq 1$. Now, suppose $n_k\geq k$. Then, $n_{k+1}>n_k\geq k$, and since $n_{k+1}$ is a natural number, $n_{k+1}\geq k+1$. Hence, $n_k\geq k$ for all $k\in\mathbb{N}$.
+\newline
+\newline
+Since $x_n\to p$, for every open neighborhood $U$ of $p$, there exists $N_0\in\mathbb{N}$ such that for all $n\geq N_0$, $x_n\in U$. Let $U$ be an arbitrary open neighborhood of $p$, and choose $N=N_0$. Then, for all $k\geq N$,
+\[
+    n_k\geq k\geq N=N_0,
+\]
+so $y_k=x_{n_k}\in U$, since $N_0$ guarantees that every $n\geq N_0$ satisfies $x_n\in U$. Since $U$ was chosen arbitrarily, for every open neighborhood $U$ of $p$, there exists $N\in\mathbb{N}$ such that for all $k\geq N$, $y_k\in U$. Hence, $y_k\to p$.
+\newline
+\newline
+Note that this argument never used that limits are unique, so it holds for every point $p$ that $(x_n)$ converges to. Therefore, if $(y_k)$ is a subsequence of $(x_n)$, then $(y_k)$ converges to $p$ also.
+\newline
+
+\underline{Problem 3}
+\newline
+\begin{parts}
+    \part Each topology on $X$ is a collection of open sets, so each topology is a subset of the power set of $X$,
+    \[
+        \mathcal{P}(X)=\{\emptyset,\{a\},\{b\},\{a,b\}\}.
+    \]
+    By the definition of a topology, $\emptyset$ and $X=\{a,b\}$ must be in every topology on $X$. So, the only choice is whether to include $\{a\}$ and whether to include $\{b\}$. This gives four candidates: including neither, including only $\{a\}$, including only $\{b\}$, and including both.
+    \newline
+    \newline
+    The definition of a topology also requires that the union of any open sets is open and the finite intersection of any open sets is open. We check that each candidate satisfies these properties. Any union or intersection involving $\emptyset$ or $X$ gives back one of the sets already in the collection, since $\emptyset\cup U=U$, $X\cup U=X$, $\emptyset\cap U=\emptyset$, and $X\cap U=U$. So, the only case left to check is when both $\{a\}$ and $\{b\}$ are included. In that case,
+    \[
+        \{a\}\cup\{b\}=\{a,b\}=X \quad\text{and}\quad \{a\}\cap\{b\}=\emptyset,
+    \]
+    since $a\neq b$, and both $X$ and $\emptyset$ are in the collection. Hence, all four candidates are topologies on $X$.
+    \newline
+    \newline
+    Therefore, the topologies on $X$ are exactly
+    \begin{align*}
+        \tau_1&=\{\emptyset,\{a,b\}\},\\
+        \tau_2&=\{\emptyset,\{a\},\{a,b\}\},\\
+        \tau_3&=\{\emptyset,\{b\},\{a,b\}\},\\
+        \tau_4&=\{\emptyset,\{a\},\{b\},\{a,b\}\}.
+    \end{align*}
+    \part Yes. Consider $X$ with the topology $\tau_2=\{\emptyset,\{a\},\{a,b\}\}$. Let $(x_n)$ be the sequence $a,b,a,b,\ldots$, so $x_n=a$ for odd $n$ and $x_n=b$ for even $n$. Let $(y_k)$ be the subsequence of odd terms, so $y_k=x_{2k-1}=a$ for all $k\in\mathbb{N}$. Since $n_k=2k-1$ is strictly increasing, $(y_k)$ is a subsequence of $(x_n)$.
+    \newline
+    \newline
+    First, $a$ is not a limit of $(x_n)$. The set $\{a\}$ is an open neighborhood of $a$, but for any $N\in\mathbb{N}$, there is an even $n\geq N$, and $x_n=b\notin\{a\}$. So, there is no $N$ such that for all $n\geq N$, $x_n\in\{a\}$.
+    \newline
+    \newline
+    However, $a$ is a limit of $(y_k)$. The open neighborhoods of $a$ are $\{a\}$ and $\{a,b\}$, and each of them contains every term of $(y_k)$, since $y_k=a$ for all $k$. So, for every open neighborhood $U$ of $a$, choosing $N=1$ gives $y_k\in U$ for all $k\geq N$. Hence, $y_k\to a$.
+    \newline
+    \newline
+    Note that the only limit of $(x_n)$ in this topology is $b$, and $(y_k)$ also converges to $b$, since the only open neighborhood of $b$ is $\{a,b\}$, which contains every term of $(y_k)$. So, this does not contradict Problem 2.
+    \newline
+    \newline
+    Therefore, in the topology $\tau_2$, the subsequence $(y_k)$ of $(x_n)$ has a limit, $a$, which is not a limit of the original sequence $(x_n)$.
+    \newline
+\end{parts}
+
+\underline{Problem 4}
+\newline
+\newline
+Since $f$ is uniformly continuous, for all $\varepsilon>0$, there exists $\delta>0$ such that for all $x,y\in A$, if $|x-y|<\delta$, then $|f(x)-f(y)|<\varepsilon$. Since $A$ is bounded, there exists $M>0$ such that $|p|\leq M$ for all $p\in A$. So, $A\subseteq[-M,M]$.
+\newline
+\newline
+Let $\varepsilon=1$. By uniform continuity, there exists $\delta>0$ such that for all $x,y\in A$, $|x-y|<\delta$ implies $|f(x)-f(y)|<1$. Let $k=\left\lfloor\frac{2M}{\delta}\right\rfloor$. Split $[-M,M]$ into the $k+1$ intervals
+\[
+    I_i=[-M+i\delta,\,-M+(i+1)\delta)\quad\text{for } i=0,1,\ldots,k-1,\qquad I_k=[-M+k\delta,\,M].
+\]
+Since $k\leq\frac{2M}{\delta}$, $k\delta\leq 2M$, so $-M+k\delta\leq M$ and $I_k$ is nonempty. The intervals $I_0,\ldots,I_{k-1}$ cover $[-M,-M+k\delta)$, and $I_k$ covers $[-M+k\delta,M]$, so
+\[
+    [-M,M]=\bigcup_{i=0}^{k}I_i.
+\]
+Each $I_i$ with $i<k$ is a half-open interval of length $\delta$, so any two points in it are less than $\delta$ apart. The interval $I_k$ has length $2M-k\delta$, and since $\frac{2M}{\delta}-k<1$, $2M-k\delta<\delta$. So, any two points in $I_k$ are also less than $\delta$ apart. Hence, for every $i$, if $x,y\in I_i$, then $|x-y|<\delta$.
+\newline
+\newline
+Let $J=\{i\in\{0,1,\ldots,k\} : A\cap I_i\neq\emptyset\}$. For each $i\in J$, choose $a_i\in A\cap I_i$. Let
+\[
+    S=\{|f(a_i)| : i\in J\}.
+\]
+Since $A$ is nonempty, $J$ is nonempty, so $S$ is nonempty. Since $J$ has at most $k+1$ elements, $S$ is a finite set of real numbers, so $s=\max S$ exists.
+\newline
+\newline
+Let $x\in A$ be arbitrary. Since $A\subseteq[-M,M]=\bigcup_{i=0}^{k}I_i$, $x\in I_i$ for some $i$. Then, $x\in A\cap I_i$, so $A\cap I_i\neq\emptyset$ and $i\in J$, so $a_i$ exists. Since $x,a_i\in I_i$, $|x-a_i|<\delta$, so $|f(x)-f(a_i)|<1$. Then, by the Triangle Inequality,
+\[
+    |f(x)|=|f(x)-f(a_i)+f(a_i)|\leq|f(x)-f(a_i)|+|f(a_i)|<1+|f(a_i)|\leq 1+s.
+\]
+Since $x$ was chosen arbitrarily from $A$, $|f(x)|<1+s$ for all $x\in A$. So, $f(A)\subseteq(-(1+s),\,1+s)$. Therefore, $f(A)$ is bounded.
+
+\end{document}
