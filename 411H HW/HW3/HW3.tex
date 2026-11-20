@@ -1,0 +1,170 @@
+\documentclass{exam}
+\usepackage{amsmath, amssymb}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\runningheadrule
+\firstpageheader{Prof. Komlos \\ Mathematical Analysis I}{Homework 3}{Aadhithya Saravanan}
+\runningheader{Mathematical Analysis I \\ Homework 3}{}{Saravanan}
+\firstpagefooter{}{}{}
+\runningfooter{ }{\thepage}{ }
+
+\printanswers
+
+\begin{document}
+
+\underline{Problem 1}
+\newline
+\newline
+Since intervals can be bounded or unbounded, write each interval as $I_k=(a_k,b_k)$ with $-\infty\leq a_k<b_k\leq\infty$, where $a_k=-\infty$ or $b_k=\infty$ means $I_k$ is unbounded. Then, $|I_k|=b_k-a_k$ if $I_k$ is bounded, and $|I_k|=\infty$ if $I_k$ is unbounded. Throughout, endpoints are compared in the extended real line, so $-\infty<t<\infty$ for every real number $t$. Reorder the intervals in order of ascending left endpoint, so that
+\[
+    a_1\leq a_2\leq\cdots\leq a_n.
+\]
+Reordering does not change $\bigcup_{k=1}^{n}I_k$ or $\sum_{k=1}^{n}|I_k|$.
+\newline
+\newline
+First, we will show that if $(\alpha,\beta)$ and $(c,d)$ are open intervals with $\alpha\leq c<\beta$, then their union is an open interval, namely
+\[
+    (\alpha,\beta)\cup(c,d)=(\alpha,\max\{\beta,d\}).
+\]
+Since $\alpha\leq c$, both $(\alpha,\beta)$ and $(c,d)$ are contained in $(\alpha,\max\{\beta,d\})$. Conversely, let $t\in(\alpha,\max\{\beta,d\})$. If $t<\beta$, then $t\in(\alpha,\beta)$. If $t\geq\beta$, then $t>c$ since $c<\beta$, and since $t<\max\{\beta,d\}$ and $t\geq\beta$, $t<d$. So, $t\in(c,d)$. Hence, the two sets are equal. Note that $c<\beta$ means the two intervals overlap, while if $c\geq\beta$, then $(c,d)$ lies entirely to the right of $(\alpha,\beta)$, so the two intervals are disjoint.
+\newline
+\newline
+Also, if both intervals are bounded, the length of the union is at most the sum of the lengths. If $d\leq\beta$, then
+\[
+    \max\{\beta,d\}-\alpha=\beta-\alpha\leq(\beta-\alpha)+(d-c).
+\]
+If $d>\beta$, then since $c<\beta$,
+\[
+    \max\{\beta,d\}-\alpha=(\beta-\alpha)+(d-\beta)<(\beta-\alpha)+(d-c).
+\]
+Hence, $|(\alpha,\beta)\cup(c,d)|\leq|(\alpha,\beta)|+|(c,d)|$.
+\newline
+\newline
+Now, we construct the $J_\ell$ by scanning the intervals from left to right. Start a current block $(\alpha,\beta)=(a_1,b_1)$. For each $k=2,\ldots,n$:
+\begin{itemize}
+    \item If $a_k<\beta$, then $I_k$ overlaps the current block, so merge it by replacing $(\alpha,\beta)$ with $(\alpha,\beta)\cup I_k=(\alpha,\max\{\beta,b_k\})$.
+    \item If $a_k\geq\beta$, then $I_k$ does not overlap the current block. Finish the current block, and start a new current block $(\alpha,\beta)=(a_k,b_k)$.
+\end{itemize}
+After $k=n$, finish the last current block. Call the finished blocks $J_1,\ldots,J_m$ in the order they were finished. By the first step, each merge produces an open interval, so each $J_\ell$ is an open interval. Each $I_k$ is placed into exactly one block, and each $J_\ell$ is the union of the $I_k$ placed into it.
+\newline
+\newline
+Next, we show $\bigcup_{\ell=1}^{m}J_\ell=\bigcup_{k=1}^{n}I_k$. Each merge replaces two sets with their union, which does not change the total union. Since every $I_k$ is placed into exactly one $J_\ell$ and each $J_\ell$ is the union of the $I_k$ placed into it,
+\[
+    \bigcup_{\ell=1}^{m}J_\ell=\bigcup_{k=1}^{n}I_k.
+\]
+Next, we show the $J_\ell$ are disjoint. Suppose a block $J_\ell=(\alpha,\beta)$ is finished when $a_k\geq\beta$. Since the intervals are sorted, every later interval $I_j$ with $j\geq k$ has $a_j\geq a_k\geq\beta$. Every later block is a union of such intervals, so its left endpoint is some $a_j\geq\beta$. So, every later block is contained in $(\beta,\infty)$, which is disjoint from $(\alpha,\beta)$. Since this holds for every $\ell$, the family $J_1,\ldots,J_m$ is disjoint.
+\newline
+\newline
+Finally, we show $\sum_{\ell=1}^{m}|J_\ell|\leq\sum_{k=1}^{n}|I_k|$. If some $I_k$ is unbounded, then $|I_k|=\infty$, so $\sum_{k=1}^{n}|I_k|=\infty$ and the inequality holds. Otherwise, every $I_k$ is bounded, so every endpoint $a_k,b_k$ is a real number. Each block's endpoints are among these, since a merge only takes a maximum of right endpoints, so every $J_\ell$ is bounded as well. When a block is started, its length equals the length of the one interval in it. By the first step, each merge increases the length of the block by at most the length of the interval being merged in. So, by induction on the number of merges, the length of each $J_\ell$ is at most the sum of the lengths of the $I_k$ placed into it:
+\[
+    |J_\ell|\leq\sum_{I_k\subseteq J_\ell}|I_k|.
+\]
+Since every $I_k$ is placed into exactly one $J_\ell$, summing over all $\ell$ gives
+\[
+    \sum_{\ell=1}^{m}|J_\ell|\leq\sum_{\ell=1}^{m}\sum_{I_k\subseteq J_\ell}|I_k|=\sum_{k=1}^{n}|I_k|.
+\]
+Therefore, $J_1,\ldots,J_m$ is a disjoint family of open intervals such that $\bigcup_{\ell=1}^{m}J_\ell=\bigcup_{k=1}^{n}I_k$ and $\sum_{\ell=1}^{m}|J_\ell|\leq\sum_{k=1}^{n}|I_k|$.
+\newline
+
+\underline{Problem 2}
+\newline
+\newline
+Assume for the sake of contradiction that no $J\in\mathcal{F}$ contains $I$ as a subset. Since $I$ has positive length, $I$ is nonempty, so choose $p\in I$. Since $I\subseteq\bigcup_{J\in\mathcal{F}}J$, there exists $J\in\mathcal{F}$ with $p\in J$, so $J\cap I\neq\emptyset$. Since intervals can be bounded or unbounded, let $J=(a,b)$ with $-\infty\leq a<b\leq\infty$, and choose $y\in J\cap I$, so $a<y<b$. Here, $b-a=\infty$ if $J$ is unbounded.
+\newline
+\newline
+Since $J$ does not contain $I$, there exists $x\in I$ such that $x\notin J$. Since $x\notin(a,b)$, either $x\leq a$ or $x\geq b$. We will use the fact that for any point between two points in an interval, the point is also in the interval.
+\newline
+\newline
+The first case is $x\leq a$. Since $x$ is a real number, $a\neq-\infty$, so $a$ is a real number. Then, $x\leq a<y$ with $x,y\in I$, so $a$ is between two points in $I$, and $a\in I$. Since $J=(a,b)$ is open, $a\notin J$. Since $a\in I\subseteq\bigcup_{J\in\mathcal{F}}J$, there exists $K\in\mathcal{F}$ such that $a\in K$. Since $a\in K$ and $a\notin J$, $K\neq J$. Since $K$ is open and $a\in K$, there exists $\varepsilon>0$ such that $(a-\varepsilon,a+\varepsilon)\subseteq K$. Let $\varepsilon'=\min\{\varepsilon,b-a\}>0$. Then,
+\[
+    a-\varepsilon<a<a+\tfrac{\varepsilon'}{2}<a+\varepsilon,
+\]
+so $a+\frac{\varepsilon'}{2}\in K$. Also,
+\[
+    a<a+\tfrac{\varepsilon'}{2}<a+\varepsilon'\leq b,
+\]
+so $a+\frac{\varepsilon'}{2}\in J$. So, $a+\frac{\varepsilon'}{2}\in J\cap K$, and $J$ and $K$ are distinct sets in $\mathcal{F}$ that are not disjoint. This is a contradiction, since $\mathcal{F}$ is a disjoint family.
+\newline
+\newline
+The second case is $x\geq b$. Since $x$ is a real number, $b\neq\infty$, so $b$ is a real number. Then, $y<b\leq x$ with $x,y\in I$, so $b$ is between two points in $I$, and $b\in I$. Since $J=(a,b)$ is open, $b\notin J$. Since $b\in I\subseteq\bigcup_{J\in\mathcal{F}}J$, there exists $K\in\mathcal{F}$ such that $b\in K$. Since $b\in K$ and $b\notin J$, $K\neq J$. Since $K$ is open and $b\in K$, there exists $\varepsilon>0$ such that $(b-\varepsilon,b+\varepsilon)\subseteq K$. Let $\varepsilon'=\min\{\varepsilon,b-a\}>0$. Then,
+\[
+    b-\varepsilon<b-\tfrac{\varepsilon'}{2}<b<b+\varepsilon,
+\]
+so $b-\frac{\varepsilon'}{2}\in K$. Also,
+\[
+    a\leq b-\varepsilon'<b-\tfrac{\varepsilon'}{2}<b,
+\]
+so $b-\frac{\varepsilon'}{2}\in J$. So, $b-\frac{\varepsilon'}{2}\in J\cap K$, and $J$ and $K$ are distinct sets in $\mathcal{F}$ that are not disjoint. This is a contradiction, since $\mathcal{F}$ is a disjoint family.
+\newline
+\newline
+Since both cases lead to a contradiction, our assumption was false. Therefore, at least one of the intervals $J\in\mathcal{F}$ contains $I$ as a subset.
+\newline
+
+\underline{Problem 3}
+\newline
+\newline
+If some $I_k$ is unbounded, then $|I_k|=\infty$, so $\sum_{k=1}^{n}|I_k|=\infty\geq|B|$, since $B$ is bounded. So, assume every $I_k$ is bounded.
+\newline
+\newline
+By Problem 1, there exists a disjoint family $J_1,\ldots,J_m$ of open intervals such that
+\[
+    \bigcup_{\ell=1}^{m}J_\ell=\bigcup_{k=1}^{n}I_k\quad\text{and}\quad\sum_{\ell=1}^{m}|J_\ell|\leq\sum_{k=1}^{n}|I_k|.
+\]
+Since $B\subseteq\bigcup_{k=1}^{n}I_k$, $B\subseteq\bigcup_{\ell=1}^{m}J_\ell$. So, $J_1,\ldots,J_m$ is a disjoint family of open intervals covering $B$, and $B$ is a bounded interval of positive length. By Problem 2, some $J_i$ contains $B$ as a subset.
+\newline
+\newline
+Next, we show $|J_i|\geq|B|$. Since $B$ is a bounded interval of positive length, it has real endpoints $c<d$, so $(c,d)\subseteq B$ and $|B|=d-c$. Let $J_i=(a,b)$. Suppose $a>c$. Then, choose $t$ with $c<t<\min\{a,d\}$. So, $t\in(c,d)\subseteq B$, but $t<a$, so $t\notin J_i$. This contradicts $B\subseteq J_i$, so $a\leq c$. Similarly, suppose $b<d$. Then, choose $t$ with $\max\{b,c\}<t<d$. So, $t\in(c,d)\subseteq B$, but $t>b$, so $t\notin J_i$. This contradicts $B\subseteq J_i$, so $b\geq d$. Hence,
+\[
+    |J_i|=b-a\geq d-c=|B|.
+\]
+Finally, since every length is nonnegative, the sum $\sum_{\ell=1}^{m}|J_\ell|$ is at least any one of its terms, so $\sum_{\ell=1}^{m}|J_\ell|\geq|J_i|$. Then,
+\[
+    \sum_{k=1}^{n}|I_k|\geq\sum_{\ell=1}^{m}|J_\ell|\geq|J_i|\geq|B|.
+\]
+Therefore, $\sum_{k=1}^{n}|I_k|\geq|B|$.
+\newline
+
+\underline{Problem 4}
+\newline
+\newline
+Let $S=\sum_{n=1}^{\infty}|I_n|$. If $|B|=0$, then $S\geq 0=|B|$, since lengths are nonnegative. If $S=\infty$, then $S\geq|B|$, since $B$ is bounded, so $|B|$ is finite. Note that if some $I_n$ is unbounded, then $|I_n|=\infty$, so $S=\infty$, and this case is covered. So, assume $|B|>0$ and $S$ is finite.
+\newline
+\newline
+Since $B$ is a bounded interval of positive length, it has real endpoints $c<d$, so $(c,d)\subseteq B$ and $|B|=d-c$. Choose any $\varepsilon$ with $0<\varepsilon<\frac{d-c}{2}$, and let
+\[
+    C=[c+\varepsilon,\,d-\varepsilon].
+\]
+Since $\varepsilon<\frac{d-c}{2}$, $c+\varepsilon<d-\varepsilon$, so $C$ is a closed, bounded interval of positive length
+\[
+    |C|=(d-\varepsilon)-(c+\varepsilon)=d-c-2\varepsilon.
+\]
+Also, $c<c+\varepsilon$ and $d-\varepsilon<d$, so $C\subseteq(c,d)\subseteq B$.
+\newline
+\newline
+Since $C$ is a closed, bounded interval, it is compact by the Heine--Borel Theorem. So, every open cover of $C$ has a finite subcover. Since $\bigcup_{n\in\mathbb{N}}I_n\supseteq B\supseteq C$, the family $(I_n:n\in\mathbb{N})$ is an open cover of $C$. So, there exist finitely many distinct indices $n_1,\ldots,n_m$ such that
+\[
+    \bigcup_{k=1}^{m}I_{n_k}\supseteq C.
+\]
+Since $C$ is a bounded interval of positive length and $I_{n_1},\ldots,I_{n_m}$ is a finite family of open intervals covering $C$, by Problem 3,
+\[
+    \sum_{k=1}^{m}|I_{n_k}|\geq|C|=d-c-2\varepsilon.
+\]
+Since the indices $n_1,\ldots,n_m$ are distinct and every length is nonnegative, the finite sum $\sum_{k=1}^{m}|I_{n_k}|$ is at most the full sum $S$. So, for every $\varepsilon$ with $0<\varepsilon<\frac{d-c}{2}$,
+\[
+    S\geq\sum_{k=1}^{m}|I_{n_k}|\geq d-c-2\varepsilon.
+\]
+Now, assume for the sake of contradiction that $S<d-c$. Then, $d-c-S>0$, so choose
+\[
+    \varepsilon=\frac{d-c-S}{4}>0.
+\]
+Since $S\geq 0$, $\varepsilon\leq\frac{d-c}{4}<\frac{d-c}{2}$, so this $\varepsilon$ is allowed. Then,
+\[
+    S\geq d-c-2\varepsilon=d-c-\frac{d-c-S}{2}=\frac{(d-c)+S}{2}.
+\]
+So, $2S\geq(d-c)+S$, which gives $S\geq d-c$. This contradicts $S<d-c$, so our assumption was false, and $S\geq d-c$.
+\newline
+\newline
+Therefore, $\sum_{n=1}^{\infty}|I_n|\geq|B|$.
+
+\end{document}
